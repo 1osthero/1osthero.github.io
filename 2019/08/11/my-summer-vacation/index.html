@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>my summer vacation | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.struct用法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#include&amp;lt;iostream&amp;gt;using namespace std;struct point&amp;#123;	int x;	int y;	int fun(poin">
+  <meta name="description" content="​">
 <meta property="og:type" content="article">
 <meta property="og:title" content="my summer vacation">
-<meta property="og:url" content="http://yoursite.com/2019/08/07/my-summer-vacation/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/08/11/my-summer-vacation/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.struct用法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#include&amp;lt;iostream&amp;gt;using namespace std;struct point&amp;#123;	int x;	int y;	int fun(poin">
+<meta property="og:description" content="​">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-08T13:44:30.423Z">
+<meta property="og:updated_time" content="2019-08-11T04:00:33.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my summer vacation">
-<meta name="twitter:description" content="1.struct用法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#include&amp;lt;iostream&amp;gt;using namespace std;struct point&amp;#123;	int x;	int y;	int fun(poin">
+<meta name="twitter:description" content="​">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -164,16 +164,61 @@
   
 
         
-        <a href="/2019/08/07/my-summer-vacation/" class="archive-article-date">
-  	<time datetime="2019-08-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+        <a href="/2019/08/11/my-summer-vacation/" class="archive-article-date">
+  	<time datetime="2019-08-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-struct用法"><a href="#1-struct用法" class="headerlink" title="1.struct用法"></a>1.struct用法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(point &amp;p)</span>                   <span class="comment">//类型中可以加上函数</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		p.x = <span class="number">100</span>;</span><br><span class="line">		p.y = <span class="number">200</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	point(<span class="keyword">int</span> x,<span class="keyword">int</span> y):x(x),y(y)&#123;&#125;     <span class="comment">//这一步类似构造函数 目前还没搞懂</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">teacher</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="comment">// char *name;  这里将一个常量const char*赋值给了变量char*会报错</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">point <span class="title">p</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>)</span></span>;                       <span class="comment">//在外面赋值</span></span><br><span class="line">	p.x = <span class="number">1</span>;                            </span><br><span class="line">	p.y = <span class="number">2</span>;</span><br><span class="line">	point p1 = p;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.x="</span> &lt;&lt; p1.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.y="</span> &lt;&lt; p1.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	point *p2=&amp;p1;                      <span class="comment">//指针的用法</span></span><br><span class="line">	p2-&gt;fun(p1);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.x="</span> &lt;&lt; p2-&gt;x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.y="</span> &lt;&lt; p2-&gt;y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">point <span class="title">p3</span><span class="params">(<span class="number">400</span>, <span class="number">500</span>)</span></span>;                 <span class="comment">//直接赋值</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.x="</span> &lt;&lt; p3.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.y="</span> &lt;&lt; p3.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher t1;                        <span class="comment">//简单的调用</span></span><br><span class="line">	t1.age = <span class="number">22</span>;</span><br><span class="line">	t1.name = <span class="string">"rr"</span>;            </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher *t2 = &amp;t1;                 <span class="comment">//指针的用法巩固</span></span><br><span class="line">	t2-&gt;age = <span class="number">33</span>;</span><br><span class="line">	t2-&gt;name = <span class="string">"ss"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>​                       </p>
+<a id="more"></a>
 
+<h1 id="1-struct用法"><a href="#1-struct用法" class="headerlink" title="1.struct用法"></a>1.struct用法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(point &amp;p)</span>                   <span class="comment">//类型中可以加上函数</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		p.x = <span class="number">100</span>;</span><br><span class="line">		p.y = <span class="number">200</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	point(<span class="keyword">int</span> x,<span class="keyword">int</span> y):x(x),y(y)&#123;&#125;     <span class="comment">//这一步类似构造函数 目前还没搞懂</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">teacher</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="comment">// char *name;  这里将一个常量const char*赋值给了变量char*会报错</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">point <span class="title">p</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>)</span></span>;                       <span class="comment">//在外面赋值</span></span><br><span class="line">	p.x = <span class="number">1</span>;                            </span><br><span class="line">	p.y = <span class="number">2</span>;</span><br><span class="line">	point p1 = p;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.x="</span> &lt;&lt; p1.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.y="</span> &lt;&lt; p1.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	point *p2=&amp;p1;                      <span class="comment">//指针的用法</span></span><br><span class="line">	p2-&gt;fun(p1);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.x="</span> &lt;&lt; p2-&gt;x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.y="</span> &lt;&lt; p2-&gt;y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">point <span class="title">p3</span><span class="params">(<span class="number">400</span>, <span class="number">500</span>)</span></span>;                 <span class="comment">//直接赋值</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.x="</span> &lt;&lt; p3.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.y="</span> &lt;&lt; p3.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher t1;                        <span class="comment">//简单的调用</span></span><br><span class="line">	t1.age = <span class="number">22</span>;</span><br><span class="line">	t1.name = <span class="string">"rr"</span>;            </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher *t2 = &amp;t1;                 <span class="comment">//指针的用法巩固</span></span><br><span class="line">	t2-&gt;age = <span class="number">33</span>;</span><br><span class="line">	t2-&gt;name = <span class="string">"ss"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-线性表"><a href="#2-线性表" class="headerlink" title="2.线性表"></a>2.线性表</h1><h2 id="顺序存储结构"><a href="#顺序存储结构" class="headerlink" title="顺序存储结构"></a>顺序存储结构</h2><p>能够快速存储和读取 不用为逻辑关系安排存储空间</p>
+<p><strong>但是</strong> 插入删除需要移动大量元素  难以确定存储空间的长度</p>
+<h2 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h2><h3 id="单链表-动态结构"><a href="#单链表-动态结构" class="headerlink" title="单链表(动态结构)"></a>单链表(动态结构)</h3><p><strong>头指针:</strong> 是指向第一个结点的指针 <strong>必要</strong>的元素</p>
+<p><strong>头结点:</strong> 一般放在第一个结点前面 数据域可以放链表长度或者空 <strong>不是必要</strong>的元素</p>
+<p><strong>插入删除</strong>时 需要先找到对应位置 时间复杂度为O(n)  </p>
+<p><strong>找到位置后</strong> 每次插入删除只需简单赋值即可 时间复杂度为O(1)</p>
+<p>创建单链表 有<strong>头插法</strong>和<strong>尾插法</strong></p>
+<p>头插法比较简单就不说了 这里记录一下尾插法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateListTail</span><span class="params">(LinkList *L, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkList p, r;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	*L = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));     <span class="comment">//线性表</span></span><br><span class="line">	r = *L;                                  <span class="comment">//r是指向尾部的结点</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>, i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		p = (Node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));    <span class="comment">//生成新结点</span></span><br><span class="line">		p-&gt;date = rand() % <span class="number">100</span> + <span class="number">1</span>;              <span class="comment">//随机生成数赋予p</span></span><br><span class="line">		r-&gt;next = p;                         <span class="comment">//插入到r结点的后面</span></span><br><span class="line">		r = p;                               <span class="comment">//把p定义为r</span></span><br><span class="line">	&#125;</span><br><span class="line">	r-&gt;next = <span class="literal">NULL</span>;                          <span class="comment">//表示链表结束了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里 <strong>r=p</strong> 难理解</p>
+<p>就是将 <strong>p</strong> 的地址赋给 <strong>r</strong>     </p>
+<p>这样 <strong>r</strong> 又代表是尾结点 再进行循环</p>
+<h3 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h3><p>有些不提供结构struct的程序设计语言 可以使用一堆并行数组<strong>data(数据</strong>)和<strong>cur(游标)</strong>来处理 </p>
+<p>数组<strong>第一个元素</strong>的cur用来存放<strong>备用链表</strong>第一个结点的下标</p>
+<p>数组的<strong>最后一个元素</strong>的cur用来存放第一个插入元素的下标 没有插入元素则为0</p>
+<table>
+<thead>
+<tr>
+<th align="right">2(cur)</th>
+<th align="right">2(cur)</th>
+<th align="right">3(cur)</th>
+<th align="right">1(cur)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"></td>
+<td align="right">data</td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+</tr>
+</tbody></table>
+<p>类似上表这样的结构 </p>
+<p><strong>插入和删除</strong>操作的时候 只需要更改数组中的<strong>游标</strong>就可以实现 </p>
+<p>总之灵活使用游标的移动交换 就能实现很多操作</p>
+<p><strong>缺点</strong> 就是还是没有解决表长难以确定的问题</p>
 
       
 
@@ -186,57 +231,6 @@
 
       
 
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/07/my-summer-vacation/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
@@ -258,6 +252,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -278,17 +285,12 @@
         </div>
       </div>
       <footer id="footer">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
  <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2019 Yang
     	</div>
       	<div class="footer-right">
-      	<span id="busuanzi_container_site_pv">
-        本站总访问量<span id="busuanzi_value_site_pv"></span>次
-        </span>
       	</div>
     </div>
   </div>
@@ -487,5 +489,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true,"scale":0.5}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true,"scale":0.5}});</script></body>
 </html>
