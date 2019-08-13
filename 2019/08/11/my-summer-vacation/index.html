@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="秘密基地">
 <meta property="og:description" content="暑假的小总结">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-12T03:16:30.977Z">
+<meta property="og:updated_time" content="2019-08-13T12:53:14.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my summer vacation">
 <meta name="twitter:description" content="暑假的小总结">
@@ -292,7 +292,202 @@
 </tbody></table>
 <p>如果元素变化不可预料 最好用链栈 否则它的变化在可控范围内 使用顺序栈更好</p>
 <p>根据<strong>实际情况</strong>选用适合的结构 若满足LIFO结构 选用栈是比数组和链表来的更简便</p>
+<h3 id="栈的应用—递归"><a href="#栈的应用—递归" class="headerlink" title="栈的应用—递归"></a>栈的应用—递归</h3><p>这里说一个经典的递归例子: <strong>斐波那契数列(Fibonacci)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"></td>
+<td align="left">0</td>
+<td align="center">当n=0</td>
+</tr>
+<tr>
+<td align="right">F(n)=</td>
+<td align="left">1</td>
+<td align="center">当n=1</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td align="left">F(n-1)+F(n-2)</td>
+<td align="center">当n&gt;1</td>
+</tr>
+</tbody></table>
+<p>使用常规的<strong>迭代</strong>的方法代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">40</span>];</span><br><span class="line">	a[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	a[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; a[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt; <span class="number">40</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i] = a[i - <span class="number">1</span>] + a[i - <span class="number">2</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; a[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>也可以使用 <strong>递归</strong> 代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fbi</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (i &lt; <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> i == <span class="number">0</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Fbi(i - <span class="number">1</span>) + Fbi(i - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; <span class="number">40</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; Fbi(i) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>迭代</strong>使用的是<strong>循环结构</strong> 而<strong>递归</strong>是重复直接调用或间接调用相同的函数的<strong>选择结构</strong></p>
+<p>递归看起来结构更加<strong>清晰 易理解</strong> 但是大量的函数堆积 会<strong>耗费大量时间和内存</strong></p>
+<p>在压入阶段的时候 就是将当前函数的局部变量 参数 返回地址压入栈中 </p>
+<p>然后等到找到符合的条件 弹出阶段时候 从栈顶开始 层层弹出 所以<strong>递归是栈的一种应用</strong></p>
+<h3 id="栈的应用—四则运算表达式求值"><a href="#栈的应用—四则运算表达式求值" class="headerlink" title="栈的应用—四则运算表达式求值"></a>栈的应用—四则运算表达式求值</h3><p>这里总结一下<strong>后缀表达式</strong>也称为<strong>逆波兰(RPN)</strong></p>
+<p>举个例子 265-3*+84/+</p>
+<p>先让265入栈 然后是 “ - “ 所以出栈5作为减数 6作为被减数 得到1 再让它入栈</p>
+<p>这时栈里是21 再入栈3 然后是” * “ 所以出栈3和1相乘 得到3 再让它入栈</p>
+<p>下面是” + “ 出栈3和2相加 得到5 让它入栈  同理这样一直运算下去 得到运算结果 比较简单</p>
+<p>比较难的是 如何将<strong>中缀表达式转后缀表达式</strong></p>
+<p>中缀表达式例子 “ 2+(6-5)×3+8÷4 “</p>
+<p>第一个字符是数字2 直接输出2 然后是符号” + “ 让它入栈</p>
+<p>第三个符号是” ( “ 继续入栈 第四个是字符6 直接输出  接着是 “ - “ 让它入栈</p>
+<p>第六个符号是 “ - “让它入栈 接着是字符5 直接输出  </p>
+<p>目前栈内情况为</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">(</td>
+</tr>
+<tr>
+<td align="center">+</td>
+</tr>
+</tbody></table>
+<p>输出为<strong>265</strong></p>
+<p>下一个是符号” ) “ 则弹出栈顶 直到符号” ( “为止  则输出为<strong>265-</strong> 栈内只剩下” + “</p>
+<p>紧接着进入的是符号” × “ 因为它的优先级大于栈顶的” + “ 所以不输出 </p>
+<p>接着的是数字3 就输出  之后是符号” + “ 比栈顶的” × “优先级低  </p>
+<p>所以要将栈内的元素出栈 这时输出为<strong>265-3*+</strong>  再将” + “入栈</p>
+<p>接着是数字8 输出 然后是” ÷ “ 优先级大于栈顶的” + “ 所以入栈</p>
+<p>最后是数字4 输出  再将栈内符号输出 最终得到后缀表达式为<strong>265-3*+84/+</strong></p>
+<p>整个过程都充分利用了栈的后进先出的特性来处理</p>
+<p>计算机就是将人类好理解的中缀表达式转换为后缀表达式 再将后缀表达式进行运算 得出结果</p>
+<h2 id="队列-queue"><a href="#队列-queue" class="headerlink" title="队列(queue)"></a>队列(queue)</h2><p>就是一种只允许在一端进行插入 另一端进行删除的<strong>线性表</strong></p>
+<p>先进先出的线性表 简称为<strong>FIFO</strong></p>
+<h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h3><p>由于顺序队列存在与顺序存储结构相同的缺点 </p>
+<p>在删除操作的时候 时间复杂度为O(n)</p>
+<p>这里引入了两个指针 指向队头元素的<strong>front指针</strong> 指向队尾元素的<strong>rear指针</strong></p>
+<p>这样入队移动rear指针 出队移动front指针 时间复杂度就只有O(1)</p>
+<p>但是存在 front指针前面有空闲 而rear指针已经到了数组最后一个位置 的<strong>假溢出</strong>现象 </p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center">rear↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>于是 我们可以将后面满了 让rear指针从头开始的移动 这种顺序存储结构叫做循环队列</p>
+<table>
+<thead>
+<tr>
+<th align="center">rear↓</th>
+<th align="center"></th>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center">a5</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>当front == rear时 存在两种情况 队列为空或者队列为满</p>
+<p>所以为了防止这种情况发生 我们可以保留一个元素空间 也就是说队列满时 数组中还有一个空闲单元</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">rear↓</th>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a6</td>
+<td align="center"></td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center">a5</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>如上图 这种情况就为队列满</p>
+<p>这时存在rear可能比front大 也可能比front小 队列满不一定是相差一个元素</p>
+<table>
+<thead>
+<tr>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">rear↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a1</td>
+<td align="center">a2</td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>队列满的条件应该是 <strong>(rear+1)%QueueSize == front</strong>   </p>
+<p>通用的计算队列长度公式为 <strong>(rear-front+QueueSize)%QueueSize</strong></p>
+<p>这里循环队列的入队和出队 时间复杂度为<strong>O(1)</strong></p>
+<h3 id="队列的链式存储结构"><a href="#队列的链式存储结构" class="headerlink" title="队列的链式存储结构"></a>队列的链式存储结构</h3><p>其实就是线性表的单链表 只不过它只能尾进头出而已 简称为链队列</p>
+<p>front指针指向头结点 rear指针指向终端结点 空队列时 他们同时指向头结点</p>
+<p>入队和出队操作跟单链表很相像 时间复杂度为<strong>O(1)</strong></p>
+<p>虽然与循环队列时间复杂度都为O(1) 但是循环队列需要事先确定长度 可能造成空间浪费</p>
+<p>而链队列 不存在这个问题 但是由于它需要一个next指针域 产生空间上的开销 </p>
+<p><strong>总的来说</strong> 可以确定队列长度 使用循环队列 反之使用链队列</p>
+<h1 id="4-串-string"><a href="#4-串-string" class="headerlink" title="4.串(string)"></a>4.串(string)</h1>
       
 
       
@@ -332,7 +527,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a></li></ol>
                     </div>
                 </span>
             </div>
