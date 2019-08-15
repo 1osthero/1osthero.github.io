@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="秘密基地">
 <meta property="og:description" content="暑假的小总结">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-13T12:53:14.494Z">
+<meta property="og:updated_time" content="2019-08-15T10:29:06.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my summer vacation">
 <meta name="twitter:description" content="暑假的小总结">
@@ -487,7 +487,127 @@
 <p>虽然与循环队列时间复杂度都为O(1) 但是循环队列需要事先确定长度 可能造成空间浪费</p>
 <p>而链队列 不存在这个问题 但是由于它需要一个next指针域 产生空间上的开销 </p>
 <p><strong>总的来说</strong> 可以确定队列长度 使用循环队列 反之使用链队列</p>
-<h1 id="4-串-string"><a href="#4-串-string" class="headerlink" title="4.串(string)"></a>4.串(string)</h1>
+<h1 id="4-串-string"><a href="#4-串-string" class="headerlink" title="4.串(string)"></a>4.串(string)</h1><p>是由零个或多个字符组成的有限序列 又叫<strong>字符串</strong></p>
+<p>零个字符的串 称为空串(null string)  <strong>空格串不是空串</strong> 它是包含一个或者多个空格的串</p>
+<p>常用字符使用标准的<strong>ASCII</strong>编码 由8位二进制数可以表示256个字符 包含英语为主的语言和一些特殊符号</p>
+<p>后来有了<strong>Unicode</strong>编码 由16位二进制数 表示一个字符 2的16次方 6.5万多个字符 表示世界上所有语言的所有字符</p>
+<h2 id="串的比较"><a href="#串的比较" class="headerlink" title="串的比较"></a>串的比较</h2><p>给定两个串 : s= “a1a2……an”            t= “b1b2……bn” </p>
+<p>1.n&lt;m,且ai=bi  (i=1,2,……,n)  例如s=”hap”, t=”happy”  这时s&lt;t</p>
+<p>2.存在k&lt;=min(m,n)   使得ai=bi  (i=1,2,……,n)  且ak&lt;bk  例如s=”happen” , t=”happy” </p>
+<p>字母 <strong>y</strong> 的ASCII编码为 <strong>121</strong>   字母 <strong>e</strong> 的ASCII编码为 <strong>101</strong>           所以e&lt;y 则这时s&lt;t</p>
+<h2 id="串的存储结构"><a href="#串的存储结构" class="headerlink" title="串的存储结构"></a>串的存储结构</h2><p><strong>串的顺序存储结构</strong>  是用一组地址连续的存储单元来存储串中的字符序列</p>
+<p>一般是定长数组来定义 所以有预定义的<strong>最大串长度</strong> 可以将<strong>实际的串长度值</strong> 存放在数组的0下标位置</p>
+<p>它规定在串值最后加一个不计入串长度的<strong>结束标记字符</strong> 比如 “\0” 来表示串值的终结</p>
+<p>但是很多插入替换连接的操作都可能使串序列的长度超过了数组的长度Maxsize</p>
+<p>这时候存在一个自由存储区 叫做<strong>“堆”</strong> 在后面树中会介绍 可以在程序执行过程中<strong>动态分配</strong>串值的存储空间</p>
+<p><strong>串的链式存储</strong> 一个结点可以存放一个或者多个字符 以免空间的浪费 </p>
+<p>可是 确定每个结点存多少个字符 又成了一个问题  否则得不偿失 反而影响了串处理的性能</p>
+<p>不过链式存储在<strong>连接串和串</strong>的时候还是有一定方便 总的来说不如顺序存储灵活</p>
+<h2 id="KMP模式匹配算法"><a href="#KMP模式匹配算法" class="headerlink" title="KMP模式匹配算法"></a>KMP模式匹配算法</h2><p>相比朴素模式匹配算法   有效的避免了重复遍历的情况 </p>
+<p>这里将主串位置的下标赋值给i    子串位置的下标赋值给j</p>
+<p>为了减少回溯   <strong>i</strong> 是不回溯 那么就要考虑 <strong>j</strong> 值的变化 这里将子串中 <strong>j</strong> 变化定义为一个数组 <strong>next</strong>  </p>
+<h3 id="next数组的推导"><a href="#next数组的推导" class="headerlink" title="next数组的推导"></a>next数组的推导</h3><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"></td>
+<td>0          当j=1时</td>
+</tr>
+<tr>
+<td align="right">next[j]=</td>
+<td>Max    当{ k | 1&lt;k&lt;j ,且 <strong>‘  P1…P(k-1) ‘ = ‘ P(j-k+1)…..P(j-1) ‘</strong> }</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td>1          其他情况</td>
+</tr>
+</tbody></table>
+<p>直接用一些例子来学习</p>
+<p><strong>1.T=”abcdex”</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">j</th>
+<th align="left">123456</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="left">abcdex</td>
+</tr>
+<tr>
+<td align="center">next[j]</td>
+<td align="left">011111</td>
+</tr>
+</tbody></table>
+<p>1) 当j=1时  next[j]=0   这里是定义</p>
+<p>2) 当j=2时  j 由 1 到 j-1 就只有字符 “a” 属于其他情况 next[2]=1</p>
+<p>3) 当j=3时  j 由 1 到 j-1 就只有字符 “ab” 显然 不相等 属于其他情况 next[3]=1</p>
+<p>4) 后面同理 所以T串的 next[j] 为011111</p>
+<p><strong>2.T=”abcabx”</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">j</th>
+<th align="left">123456</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="left">abcabx</td>
+</tr>
+<tr>
+<td align="center">next[j]</td>
+<td align="left">011123</td>
+</tr>
+</tbody></table>
+<p>1) 当j=1时 next[1]=0</p>
+<p>2) 当j=2,3,4 同上例说明 next[2]=next[3]=next[4]=1</p>
+<p>3) 当j=5 此时 j 由 1 到 j-1 的串是 “ <u>a</u>bc<em>a</em> ” 前缀下划线表示的 “<u>a</u>“ 与后缀斜体表示的 “<em>a</em>“ 相等</p>
+<p>​                                                 因此可以推算出k值为2   所以next[5]=2</p>
+<p>4) 当j=6 此时 j 由 1 到 j-1 的串是 “ <u>ab</u>c<em>ab</em> “ 前缀和后缀相等  推算出 k值为3 因此 next[6]=3</p>
+<p>可以根据规律 发现 前后缀一个字符相等 k值为2 两个字符相等 k值为3  <strong>n个字符相等 k值为n+1</strong></p>
+<h3 id="nextval数组值推导"><a href="#nextval数组值推导" class="headerlink" title="nextval数组值推导"></a>nextval数组值推导</h3><p>next数组在主串和子串前面几个字符相同的情况下 会存在一些缺陷</p>
+<p>所以后来有人改进 得出了nextval数组</p>
+<p>举个例子好理解</p>
+<p><strong>T=”ababaaaba”</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">j</th>
+<th align="left">123456789</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="left">ababaaaba</td>
+</tr>
+<tr>
+<td align="center">next[j]</td>
+<td align="left">011234223</td>
+</tr>
+<tr>
+<td align="center">nextval[j]</td>
+<td align="left">010104210</td>
+</tr>
+</tbody></table>
+<p>1) 当 j=1 时   nextval[1]=0</p>
+<p>2) 当 j=2 时   因第二位字符 “b” 的next值为 1 所以与第一位字符 “a” 比较后 <strong>不相等</strong></p>
+<p>​                                                                                则nextval[2]=next[2]=1 维持原值</p>
+<p>3) 当 j=3 时   因第三位字符 “a” 的next值为 1 所以与第一位字符 “a” 比较后   <strong>相等</strong></p>
+<p>​     则nextval[3]=nextval[1]=0    这里将nextval[1]赋值给它 是因为它的next值为 1</p>
+<p>4) 当 j=4时    因第四位字符 “b” 的next值为 2 所以与第二位字符 “b” 比较后  <strong>相等</strong></p>
+<p>​    则nextval[4]=nextval[2]=1    这里将nextval[2]赋值给它 是因为它的next值为 2</p>
+<p>5) 后面同理  所以得出上述的nextval[j] </p>
+<p><strong>规律:</strong> </p>
+<p>如果a位的字符 next值为b  然后找到b位的字符与a位字符比较</p>
+<p>若相等 则nextval[a]=next[b]    若不相等 则nextval[a]=next[a]</p>
+<h2 id="串的index函数"><a href="#串的index函数" class="headerlink" title="串的index函数"></a>串的index函数</h2><p>待补充中…………….</p>
+<h1 id="5-树-Tree"><a href="#5-树-Tree" class="headerlink" title="5.树(Tree)"></a>5.树(Tree)</h1>
       
 
       
@@ -527,7 +647,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#串的比较"><span class="toc-number">4.1.</span> <span class="toc-text">串的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的存储结构"><span class="toc-number">4.2.</span> <span class="toc-text">串的存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KMP模式匹配算法"><span class="toc-number">4.3.</span> <span class="toc-text">KMP模式匹配算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#next数组的推导"><span class="toc-number">4.3.1.</span> <span class="toc-text">next数组的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nextval数组值推导"><span class="toc-number">4.3.2.</span> <span class="toc-text">nextval数组值推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的index函数"><span class="toc-number">4.4.</span> <span class="toc-text">串的index函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树-Tree"><span class="toc-number">5.</span> <span class="toc-text">5.树(Tree)</span></a></li></ol>
                     </div>
                 </span>
             </div>
