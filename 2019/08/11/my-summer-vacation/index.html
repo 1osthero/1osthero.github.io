@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="秘密基地">
 <meta property="og:description" content="暑假的小总结">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T10:29:06.604Z">
+<meta property="og:updated_time" content="2019-08-16T09:02:25.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my summer vacation">
 <meta name="twitter:description" content="暑假的小总结">
@@ -607,7 +607,174 @@
 <p>如果a位的字符 next值为b  然后找到b位的字符与a位字符比较</p>
 <p>若相等 则nextval[a]=next[b]    若不相等 则nextval[a]=next[a]</p>
 <h2 id="串的index函数"><a href="#串的index函数" class="headerlink" title="串的index函数"></a>串的index函数</h2><p>待补充中…………….</p>
-<h1 id="5-树-Tree"><a href="#5-树-Tree" class="headerlink" title="5.树(Tree)"></a>5.树(Tree)</h1>
+<h1 id="5-树-Tree"><a href="#5-树-Tree" class="headerlink" title="5.树(Tree)"></a>5.树(Tree)</h1><p>树时n(n&gt;=0)个结点的<strong>有限集</strong>   n=0时称为空树 </p>
+<p>在任一非空树中   (1) <strong>有且仅有</strong>一个特定的称为<strong>根(Root)</strong>的结点</p>
+<p>(2) 当n&gt;1时   其余结点可分为m(m&gt;0)个<strong>互不相交</strong>的有限集   每个集合本身是一棵树 并称为根的<strong>子树(SubTree)</strong></p>
+<p>结点拥有的子树数称为结点的<strong>*度(Degree)</strong>   树的度是树内各结点的度的最大值</p>
+<p>度为0的结点称为 <strong>叶结点(Leaf)</strong> 或 终端结点 </p>
+<p>结点的子树的根称为该结点的<strong>孩子(Child)</strong>   孩子称该结点为*<em>双亲(Parent) *</em> </p>
+<p>同一个双亲的孩子之间互称<strong>兄弟(Sibling) ** 结点的</strong>祖先<strong>是从根到该结点所经分支上所有结点 反之为</strong>子孙**</p>
+<p>结点的<strong>层次(Level)</strong>从根开始 根为第一层 根的孩子为第二层  树中结点的最大层次称为树的 <strong>*深度(Depth)</strong> 或 高度</p>
+<p>如果将书中结点的各子树看成从左至右是有次序的 <strong>不能互换</strong>的 则称该树为<strong>有序树</strong> 否则称为<strong>无序树</strong></p>
+<p><strong>森林(Forest)</strong>是m(m&gt;=0)棵互不相交的树</p>
+<h2 id="树的存储结构"><a href="#树的存储结构" class="headerlink" title="树的存储结构"></a>树的存储结构</h2><h3 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h3><p>每个结点中data存储数据 和 parent指针 根结点可设置为-1  这样我们根据<strong>parent指针</strong>找到双亲 时间复杂度为O(1)</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>为了方便找到孩子  可以改进一下 加入一个结点<strong>最左边孩子的域</strong> 如果没有孩子为-1</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+<th align="center">firstchild</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>(不过只能解决0-2个孩子结点 寻找孩子的问题 )</p>
+<p>为了能体现各兄弟之间的关系 可以再增加一个<strong>右兄弟域</strong>来体现 如果不存在右兄弟 则为-1</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+<th align="center">firstchild</th>
+<th align="center">rightsib</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="孩子表示法"><a href="#孩子表示法" class="headerlink" title="孩子表示法"></a>孩子表示法</h3><p>由于树中每个结点可能有多个子树 可以考虑用多重链表 </p>
+<p>即每个结点有多个指针域  每个指针指向一颗子树的根结点  有两种比较容易想到的方案</p>
+<p>方案一  </p>
+<table>
+<thead>
+<tr>
+<th align="center">data</th>
+<th align="center">child1</th>
+<th align="center">child2</th>
+<th align="center">…….</th>
+<th align="center">childd</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>每个结点的长度相同   如果树中各结点的度差距很大的时候 会造成<strong>大量空间浪费</strong></p>
+<p>方案二   </p>
+<table>
+<thead>
+<tr>
+<th align="center">data</th>
+<th align="center">degree</th>
+<th align="center">child1</th>
+<th align="center">child2</th>
+<th align="center">…..</th>
+<th align="center">childd</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>加入一个degree表示该结点的度数 从而添加孩子数 每个结点的长度是不一样的</p>
+<p>克服了浪费空间 但是由于每个结点的链表是<strong>不相同的结构</strong> 而且要<strong>维护结点的度的数值</strong> 在<strong>时间</strong>上可能会损耗更多</p>
+<p>为了既可以减少空指针的浪费又能使结点结构相同 可以<strong>分两步</strong>进行</p>
+<p>先将每个结点放到一个<strong>顺序存储结构的数组</strong>中 再将每个结点的孩子关系放到一个<strong>单链表</strong>中体现</p>
+<p>大概就是将每个结点的孩子结点用单链表排列起来 则n个结点就有n个孩子链表 叶子结点则为空链表</p>
+<p>然后n个单链表中的n个头指针又组成一个线性表 使用顺序存储结构 放进一个一维数组中 再加入双亲方便查找</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+<th align="center">firstchild</th>
+<th align="center"></th>
+<th align="center">child</th>
+<th align="center">next</th>
+<th></th>
+<th align="center">child</th>
+<th align="center">next</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">A</td>
+<td align="center">-1</td>
+<td align="center">1</td>
+<td align="center">→</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td>→</td>
+<td align="center">2</td>
+<td align="center">^</td>
+</tr>
+</tbody></table>
+<h3 id="孩子兄弟表示法"><a href="#孩子兄弟表示法" class="headerlink" title="孩子兄弟表示法"></a>孩子兄弟表示法</h3><p>观察后发现 任意一棵树 它的结点的<strong>第一个孩子</strong>如果存在就是唯一的 <strong>它的右兄弟</strong>如果存在也是唯一的</p>
+<p>因此我们设置两个指针 一个是第一个孩子 一个是右孩子  这种表示方法 给<strong>查找某个结点孩子</strong>提供了方便</p>
+<p>这样只需要通过结点的<strong>first</strong>找到该结点长子 再通过长子结点的<strong>rightsib</strong>找到它的二弟 直到找到你要的孩子</p>
+<table>
+<thead>
+<tr>
+<th align="center">data</th>
+<th align="center">firstchild</th>
+<th align="center">rightsib</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="二叉树-Binary-Tree"><a href="#二叉树-Binary-Tree" class="headerlink" title="二叉树(Binary Tree)"></a>二叉树(Binary Tree)</h2><p>由一个根结点和两颗<strong>互不相交</strong>的 分别称为根结点的左子树和右子树的二叉树组成</p>
+<p>1)  每个结点最多有两颗子树 </p>
+<p>2)  左子树和右子树有顺序 次序不可颠倒</p>
+<p>3)  即使结点只有一颗子树 也要分清是左子树还是右子树</p>
+<h3 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h3><p><strong>斜树</strong> 只有左子树叫左斜树  只有右子树叫右斜树</p>
+<p><strong>满二叉树</strong> 所有<strong>分支结点</strong>都存在左子树和右子树 并且<strong>所有叶子</strong>都在同一层上</p>
+<p>​                <strong>同深度</strong>的二叉树中 满二叉树<strong>结点最多</strong> <strong>叶子数最多</strong></p>
+<p><strong>完全二叉树(未完成的满二叉树)</strong>  </p>
+<p>​                     叶子只出现在<strong>最下面两层</strong></p>
+<p>​                     <strong>最下层</strong>叶子一定在<strong>左边连续位置</strong>           <strong>倒数二层</strong>若有叶子 一定在<strong>右边连续位置</strong></p>
+<p>​                     若结点度只有1 那该结点只有<strong>左孩子</strong>    <strong>同样结点数</strong>的二叉树 完全二叉树的<strong>深度最小</strong></p>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3>
       
 
       
@@ -647,7 +814,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#串的比较"><span class="toc-number">4.1.</span> <span class="toc-text">串的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的存储结构"><span class="toc-number">4.2.</span> <span class="toc-text">串的存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KMP模式匹配算法"><span class="toc-number">4.3.</span> <span class="toc-text">KMP模式匹配算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#next数组的推导"><span class="toc-number">4.3.1.</span> <span class="toc-text">next数组的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nextval数组值推导"><span class="toc-number">4.3.2.</span> <span class="toc-text">nextval数组值推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的index函数"><span class="toc-number">4.4.</span> <span class="toc-text">串的index函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树-Tree"><span class="toc-number">5.</span> <span class="toc-text">5.树(Tree)</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#串的比较"><span class="toc-number">4.1.</span> <span class="toc-text">串的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的存储结构"><span class="toc-number">4.2.</span> <span class="toc-text">串的存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KMP模式匹配算法"><span class="toc-number">4.3.</span> <span class="toc-text">KMP模式匹配算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#next数组的推导"><span class="toc-number">4.3.1.</span> <span class="toc-text">next数组的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nextval数组值推导"><span class="toc-number">4.3.2.</span> <span class="toc-text">nextval数组值推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的index函数"><span class="toc-number">4.4.</span> <span class="toc-text">串的index函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树-Tree"><span class="toc-number">5.</span> <span class="toc-text">5.树(Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#树的存储结构"><span class="toc-number">5.1.</span> <span class="toc-text">树的存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#双亲表示法"><span class="toc-number">5.1.1.</span> <span class="toc-text">双亲表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子表示法"><span class="toc-number">5.1.2.</span> <span class="toc-text">孩子表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子兄弟表示法"><span class="toc-number">5.1.3.</span> <span class="toc-text">孩子兄弟表示法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树-Binary-Tree"><span class="toc-number">5.2.</span> <span class="toc-text">二叉树(Binary Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">5.2.1.</span> <span class="toc-text">特殊二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的性质"><span class="toc-number">5.2.2.</span> <span class="toc-text">二叉树的性质</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
