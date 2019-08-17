@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>my summer vacation | 秘密基地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="暑假的小总结">
+  <meta name="description" content="dizzy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="my summer vacation">
 <meta property="og:url" content="http://yoursite.com/2019/08/11/my-summer-vacation/index.html">
 <meta property="og:site_name" content="秘密基地">
-<meta property="og:description" content="暑假的小总结">
+<meta property="og:description" content="dizzy">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-16T09:02:25.109Z">
+<meta property="og:updated_time" content="2019-08-17T08:04:53.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my summer vacation">
-<meta name="twitter:description" content="暑假的小总结">
+<meta name="twitter:description" content="dizzy">
   
     <link rel="alternative" href="/atom.xml" title="秘密基地" type="application/atom+xml">
   
@@ -172,7 +172,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>暑假的小总结</p>
+        <p>dizzy</p>
 <a id="more"></a>
 
 <h1 id="1-struct用法"><a href="#1-struct用法" class="headerlink" title="1.struct用法"></a>1.struct用法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(point &amp;p)</span>                   <span class="comment">//类型中可以加上函数</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		p.x = <span class="number">100</span>;</span><br><span class="line">		p.y = <span class="number">200</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	point(<span class="keyword">int</span> x,<span class="keyword">int</span> y):x(x),y(y)&#123;&#125;     <span class="comment">//这一步类似构造函数 目前还没搞懂</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">teacher</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="comment">// char *name;  这里将一个常量const char*赋值给了变量char*会报错</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">point <span class="title">p</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>)</span></span>;                       <span class="comment">//在外面赋值</span></span><br><span class="line">	p.x = <span class="number">1</span>;                            </span><br><span class="line">	p.y = <span class="number">2</span>;</span><br><span class="line">	point p1 = p;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.x="</span> &lt;&lt; p1.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.y="</span> &lt;&lt; p1.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	point *p2=&amp;p1;                      <span class="comment">//指针的用法</span></span><br><span class="line">	p2-&gt;fun(p1);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.x="</span> &lt;&lt; p2-&gt;x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.y="</span> &lt;&lt; p2-&gt;y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">point <span class="title">p3</span><span class="params">(<span class="number">400</span>, <span class="number">500</span>)</span></span>;                 <span class="comment">//直接赋值</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.x="</span> &lt;&lt; p3.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.y="</span> &lt;&lt; p3.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher t1;                        <span class="comment">//简单的调用</span></span><br><span class="line">	t1.age = <span class="number">22</span>;</span><br><span class="line">	t1.name = <span class="string">"rr"</span>;            </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher *t2 = &amp;t1;                 <span class="comment">//指针的用法巩固</span></span><br><span class="line">	t2-&gt;age = <span class="number">33</span>;</span><br><span class="line">	t2-&gt;name = <span class="string">"ss"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -196,19 +196,29 @@
 <table>
 <thead>
 <tr>
-<th align="right">2(cur)</th>
-<th align="right">2(cur)</th>
-<th align="right">3(cur)</th>
-<th align="right">1(cur)</th>
+<th></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
 </tr>
 </thead>
 <tbody><tr>
+<td>游标</td>
+<td align="right">2(cur)</td>
+<td align="right">2(cur)</td>
+<td align="right">3(cur)</td>
+<td align="right">1(cur)</td>
+</tr>
+<tr>
+<td></td>
 <td align="right"></td>
 <td align="right">data</td>
 <td align="right"></td>
 <td align="right"></td>
 </tr>
 <tr>
+<td>下标</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">2</td>
@@ -490,10 +500,10 @@
 <h1 id="4-串-string"><a href="#4-串-string" class="headerlink" title="4.串(string)"></a>4.串(string)</h1><p>是由零个或多个字符组成的有限序列 又叫<strong>字符串</strong></p>
 <p>零个字符的串 称为空串(null string)  <strong>空格串不是空串</strong> 它是包含一个或者多个空格的串</p>
 <p>常用字符使用标准的<strong>ASCII</strong>编码 由8位二进制数可以表示256个字符 包含英语为主的语言和一些特殊符号</p>
-<p>后来有了<strong>Unicode</strong>编码 由16位二进制数 表示一个字符 2的16次方 6.5万多个字符 表示世界上所有语言的所有字符</p>
-<h2 id="串的比较"><a href="#串的比较" class="headerlink" title="串的比较"></a>串的比较</h2><p>给定两个串 : s= “a1a2……an”            t= “b1b2……bn” </p>
-<p>1.n&lt;m,且ai=bi  (i=1,2,……,n)  例如s=”hap”, t=”happy”  这时s&lt;t</p>
-<p>2.存在k&lt;=min(m,n)   使得ai=bi  (i=1,2,……,n)  且ak&lt;bk  例如s=”happen” , t=”happy” </p>
+<p>后来有了<strong>Unicode</strong>编码 由16位二进制数 表示一个字符 2<sup>16</sup>种 6.5万多个字符 表示世界上所有语言的所有字符</p>
+<h2 id="串的比较"><a href="#串的比较" class="headerlink" title="串的比较"></a>串的比较</h2><p>给定两个串 : s= “a<sub>1</sub>a<sub>2</sub>……a<sub>n</sub>“            t= “b<sub>1</sub>b<sub>2</sub>……b<sub>n</sub>“ </p>
+<p>1.n&lt;m,且a<sub>i</sub>=b<sub>i</sub>  (i=1,2,……,n)  例如s=”hap”, t=”happy”  这时s&lt;t</p>
+<p>2.存在k&lt;=min(m,n)   使得a<sub>i</sub>=b<sub>i</sub>  (i=1,2,……,n)  且a<sub>k</sub>&lt;b<sub>k</sub>  例如s=”happen” , t=”happy” </p>
 <p>字母 <strong>y</strong> 的ASCII编码为 <strong>121</strong>   字母 <strong>e</strong> 的ASCII编码为 <strong>101</strong>           所以e&lt;y 则这时s&lt;t</p>
 <h2 id="串的存储结构"><a href="#串的存储结构" class="headerlink" title="串的存储结构"></a>串的存储结构</h2><p><strong>串的顺序存储结构</strong>  是用一组地址连续的存储单元来存储串中的字符序列</p>
 <p>一般是定长数组来定义 所以有预定义的<strong>最大串长度</strong> 可以将<strong>实际的串长度值</strong> 存放在数组的0下标位置</p>
@@ -519,7 +529,7 @@
 </tr>
 <tr>
 <td align="right">next[j]=</td>
-<td>Max    当{ k | 1&lt;k&lt;j ,且 <strong>‘  P1…P(k-1) ‘ = ‘ P(j-k+1)…..P(j-1) ‘</strong> }</td>
+<td>Max    当{ k | 1&lt;k&lt;j ,且 <strong>‘  P<sub>1</sub>…P<sub>k-1</sub> ‘ = ‘ P<sub>j-k+1</sub>…..P<sub>(j-1)</sub> ‘</strong> }</td>
 </tr>
 <tr>
 <td align="right"></td>
@@ -612,8 +622,8 @@
 <p>(2) 当n&gt;1时   其余结点可分为m(m&gt;0)个<strong>互不相交</strong>的有限集   每个集合本身是一棵树 并称为根的<strong>子树(SubTree)</strong></p>
 <p>结点拥有的子树数称为结点的<strong>*度(Degree)</strong>   树的度是树内各结点的度的最大值</p>
 <p>度为0的结点称为 <strong>叶结点(Leaf)</strong> 或 终端结点 </p>
-<p>结点的子树的根称为该结点的<strong>孩子(Child)</strong>   孩子称该结点为*<em>双亲(Parent) *</em> </p>
-<p>同一个双亲的孩子之间互称<strong>兄弟(Sibling) ** 结点的</strong>祖先<strong>是从根到该结点所经分支上所有结点 反之为</strong>子孙**</p>
+<p>结点的子树的根称为该结点的<strong>孩子(Child)</strong>   孩子称该结点为<strong>双亲(Parent)</strong> </p>
+<p>同一个双亲的孩子之间互称<strong>兄弟(Sibling)</strong> 结点的<strong>祖先</strong>是从根到该结点所经分支上所有结点 反之为<strong>子孙</strong></p>
 <p>结点的<strong>层次(Level)</strong>从根开始 根为第一层 根的孩子为第二层  树中结点的最大层次称为树的 <strong>*深度(Depth)</strong> 或 高度</p>
 <p>如果将书中结点的各子树看成从左至右是有次序的 <strong>不能互换</strong>的 则称该树为<strong>有序树</strong> 否则称为<strong>无序树</strong></p>
 <p><strong>森林(Forest)</strong>是m(m&gt;=0)棵互不相交的树</p>
@@ -774,7 +784,24 @@
 <p>​                     叶子只出现在<strong>最下面两层</strong></p>
 <p>​                     <strong>最下层</strong>叶子一定在<strong>左边连续位置</strong>           <strong>倒数二层</strong>若有叶子 一定在<strong>右边连续位置</strong></p>
 <p>​                     若结点度只有1 那该结点只有<strong>左孩子</strong>    <strong>同样结点数</strong>的二叉树 完全二叉树的<strong>深度最小</strong></p>
-<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p><strong>性质1:</strong> 在二叉树的第 <strong>i</strong> 层上至多有 <strong>2<sup>i-1</sup></strong> 个结点  (i&gt;=1)</p>
+<p><strong>性质2:</strong> 深度为 <strong>k</strong> 的二叉树至多有 <strong>2<sup>k</sup>-1</strong> 个结点  (k&gt;=1)   注意与性质1区分</p>
+<p><strong>性质3:</strong> 对于任何一颗二叉树 <strong>T</strong> 如果其终端结点数为 <strong>n<sub>0</sub></strong> ; 度为 <strong>2</strong> 的结点数为 <strong>n<sub>2</sub></strong>  ; 则<strong>n<sub>0</sub>=n<sub>2</sub>+1</strong></p>
+<p>推导过程分为三步  ①  <strong>n=n<sub>2</sub>+n<sub>1</sub>+n<sub>0</sub></strong>   n为结点总数  度为0,1,2的结点数相加可得</p>
+<p>②  <strong>n=2n<sub>2</sub>+n<sub>1</sub>+1</strong>   按照连线来找结点 度为2的结点 可以找到2个结点 度为1的结点只能找到1个结点 再加上根结点</p>
+<p>③  <strong>2n<sub>2</sub>+n<sub>1</sub>+1=n<sub>2</sub>+n<sub>1</sub>+n<sub>0</sub></strong>    简单化简后 就可得到性质3  <strong>n<sub>0</sub>=n<sub>2</sub>+1</strong></p>
+<p><strong>性质4:</strong> 具有 n 个结点的完全二叉树的深度为<strong>[log<sub>2</sub>n]+1</strong>  ( [x]表示不大于x的最大整数 )</p>
+<p>① 由性质2可知 满二叉树的结点 n=2<sup>k</sup>-1  将这个公式倒推 可以得到 <strong>k=log<sub>2</sub>(n+1)</strong></p>
+<p>② 根据完全二叉树的定义 <strong>叶子只出现在最下面两层</strong>  可以得出它的结点数一定多于2<sup><strong>k-1</strong></sup>-1   即满足 2<sup><strong>k-1</strong></sup>-1&lt;n&lt;=2<sup><strong>k</strong></sup>-1    </p>
+<p>③ 由于结点数n是整数 所以 n&gt;=2<sup>k-1</sup>  且 n&lt;2<sup>k</sup>     这一步需要多思考一下  即现在式子为2<sup>k-1</sup>&lt;=n&lt;2<sup>k</sup></p>
+<p>④ 不等式两边取对数 可以得到 k-1&lt;=log<sub>2</sub>n&lt;k   就是代入log<sub>2</sub>x的时递增函数中  不等号方向不变</p>
+<p>⑤ 由于k作为树的深度 也是整数  所以可以得到上述性质  k=[log<sub>2</sub>n]+1</p>
+<p><strong>性质5:</strong> 对一颗有n个结点的完全二叉树的结点按层序编号(每层从左到右) 对其中任一结点 <strong>i</strong> 有以下规律</p>
+<p>1) 如果 <strong>i=1</strong> 则结点 <strong>i</strong> 是二叉树的根 无双亲 ；如果 <strong>i&gt;1</strong> 则其双亲是结点 <strong>[ i/2 ]</strong></p>
+<p>2) 如果 <strong>2i&gt;n</strong> 则结点 <strong>i</strong> 无左孩子 否则其左孩子是结点 <strong>2i</strong></p>
+<p>3) 如果 <strong>2i+1&gt;n</strong> 则结点 <strong>i</strong> 无右孩子 否则其右孩子是 <strong>2i+1</strong></p>
+<p>这3条性质 看图记忆比较好 理解起来并不难</p>
+<h3 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h3>
       
 
       
@@ -814,7 +841,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#串的比较"><span class="toc-number">4.1.</span> <span class="toc-text">串的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的存储结构"><span class="toc-number">4.2.</span> <span class="toc-text">串的存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KMP模式匹配算法"><span class="toc-number">4.3.</span> <span class="toc-text">KMP模式匹配算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#next数组的推导"><span class="toc-number">4.3.1.</span> <span class="toc-text">next数组的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nextval数组值推导"><span class="toc-number">4.3.2.</span> <span class="toc-text">nextval数组值推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的index函数"><span class="toc-number">4.4.</span> <span class="toc-text">串的index函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树-Tree"><span class="toc-number">5.</span> <span class="toc-text">5.树(Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#树的存储结构"><span class="toc-number">5.1.</span> <span class="toc-text">树的存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#双亲表示法"><span class="toc-number">5.1.1.</span> <span class="toc-text">双亲表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子表示法"><span class="toc-number">5.1.2.</span> <span class="toc-text">孩子表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子兄弟表示法"><span class="toc-number">5.1.3.</span> <span class="toc-text">孩子兄弟表示法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树-Binary-Tree"><span class="toc-number">5.2.</span> <span class="toc-text">二叉树(Binary Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">5.2.1.</span> <span class="toc-text">特殊二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的性质"><span class="toc-number">5.2.2.</span> <span class="toc-text">二叉树的性质</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#串的比较"><span class="toc-number">4.1.</span> <span class="toc-text">串的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的存储结构"><span class="toc-number">4.2.</span> <span class="toc-text">串的存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KMP模式匹配算法"><span class="toc-number">4.3.</span> <span class="toc-text">KMP模式匹配算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#next数组的推导"><span class="toc-number">4.3.1.</span> <span class="toc-text">next数组的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nextval数组值推导"><span class="toc-number">4.3.2.</span> <span class="toc-text">nextval数组值推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的index函数"><span class="toc-number">4.4.</span> <span class="toc-text">串的index函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树-Tree"><span class="toc-number">5.</span> <span class="toc-text">5.树(Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#树的存储结构"><span class="toc-number">5.1.</span> <span class="toc-text">树的存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#双亲表示法"><span class="toc-number">5.1.1.</span> <span class="toc-text">双亲表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子表示法"><span class="toc-number">5.1.2.</span> <span class="toc-text">孩子表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子兄弟表示法"><span class="toc-number">5.1.3.</span> <span class="toc-text">孩子兄弟表示法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树-Binary-Tree"><span class="toc-number">5.2.</span> <span class="toc-text">二叉树(Binary Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">5.2.1.</span> <span class="toc-text">特殊二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的性质"><span class="toc-number">5.2.2.</span> <span class="toc-text">二叉树的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的存储结构"><span class="toc-number">5.2.3.</span> <span class="toc-text">二叉树的存储结构</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
