@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test | 秘密基地</title>
+  <title>my summer vacation | 秘密基地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2019/08/21/test/index.html">
+  <meta name="description" content="dizzy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my summer vacation">
+<meta property="og:url" content="http://yoursite.com/2019/08/11/summer/index.html">
 <meta property="og:site_name" content="秘密基地">
+<meta property="og:description" content="dizzy">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/08/21/test/1.jpg">
-<meta property="og:updated_time" content="2019-08-21T11:46:33.253Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/summer/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/summer/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/summer/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/summer/4.jpg">
+<meta property="og:updated_time" content="2019-08-21T11:58:01.281Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/21/test/1.jpg">
+<meta name="twitter:title" content="my summer vacation">
+<meta name="twitter:description" content="dizzy">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/11/summer/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="秘密基地" type="application/atom+xml">
   
@@ -151,27 +157,857 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-summer" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      my summer vacation
     </h1>
   
 
         
-        <a href="/2019/08/21/test/" class="archive-article-date">
-  	<time datetime="2019-08-21T11:06:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+        <a href="/2019/08/11/summer/" class="archive-article-date">
+  	<time datetime="2019-08-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2019/08/21/test/1.jpg" alt="logo"></p>
+        <p>dizzy</p>
+<a id="more"></a>
+
+<h1 id="1-struct用法"><a href="#1-struct用法" class="headerlink" title="1.struct用法"></a>1.struct用法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(point &amp;p)</span>                   <span class="comment">//类型中可以加上函数</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		p.x = <span class="number">100</span>;</span><br><span class="line">		p.y = <span class="number">200</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	point(<span class="keyword">int</span> x,<span class="keyword">int</span> y):x(x),y(y)&#123;&#125;     <span class="comment">//这一步类似构造函数 目前还没搞懂</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">teacher</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="comment">// char *name;  这里将一个常量const char*赋值给了变量char*会报错</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">point <span class="title">p</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>)</span></span>;                       <span class="comment">//在外面赋值</span></span><br><span class="line">	p.x = <span class="number">1</span>;                            </span><br><span class="line">	p.y = <span class="number">2</span>;</span><br><span class="line">	point p1 = p;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.x="</span> &lt;&lt; p1.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.y="</span> &lt;&lt; p1.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	point *p2=&amp;p1;                      <span class="comment">//指针的用法</span></span><br><span class="line">	p2-&gt;fun(p1);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.x="</span> &lt;&lt; p2-&gt;x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.y="</span> &lt;&lt; p2-&gt;y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">point <span class="title">p3</span><span class="params">(<span class="number">400</span>, <span class="number">500</span>)</span></span>;                 <span class="comment">//直接赋值</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.x="</span> &lt;&lt; p3.x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3.y="</span> &lt;&lt; p3.y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher t1;                        <span class="comment">//简单的调用</span></span><br><span class="line">	t1.age = <span class="number">22</span>;</span><br><span class="line">	t1.name = <span class="string">"rr"</span>;            </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t1.name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	teacher *t2 = &amp;t1;                 <span class="comment">//指针的用法巩固</span></span><br><span class="line">	t2-&gt;age = <span class="number">33</span>;</span><br><span class="line">	t2-&gt;name = <span class="string">"ss"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; t2-&gt;name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-线性表"><a href="#2-线性表" class="headerlink" title="2.线性表"></a>2.线性表</h1><h2 id="顺序存储结构"><a href="#顺序存储结构" class="headerlink" title="顺序存储结构"></a>顺序存储结构</h2><p>能够快速存储和读取 不用为逻辑关系安排存储空间</p>
+<p><strong>但是</strong> 插入删除需要移动大量元素 时间复杂度为O(n)  而且难以确定存储空间的长度</p>
+<h2 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h2><h3 id="单链表-动态结构"><a href="#单链表-动态结构" class="headerlink" title="单链表(动态结构)"></a>单链表(动态结构)</h3><p><strong>头指针:</strong> 是指向第一个结点的指针 <strong>必要</strong>的元素</p>
+<p><strong>头结点:</strong> 一般放在第一个结点前面 数据域可以放链表长度或者空 <strong>不是必要</strong>的元素</p>
+<p><strong>插入删除</strong>时 需要先找到对应位置 时间复杂度为O(n)  </p>
+<p><strong>找到位置后</strong> 每次插入删除只需简单赋值即可 时间复杂度为O(1)</p>
+<p>创建单链表 有<strong>头插法</strong>和<strong>尾插法</strong></p>
+<p>头插法比较简单就不说了 这里记录一下尾插法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateListTail</span><span class="params">(LinkList *L, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkList p, r;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	*L = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));     <span class="comment">//线性表</span></span><br><span class="line">	r = *L;                                  <span class="comment">//r是指向尾部的结点</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>, i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		p = (Node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));    <span class="comment">//生成新结点</span></span><br><span class="line">		p-&gt;date = rand() % <span class="number">100</span> + <span class="number">1</span>;              <span class="comment">//随机生成数赋予p</span></span><br><span class="line">		r-&gt;next = p;                         <span class="comment">//插入到r结点的后面</span></span><br><span class="line">		r = p;                               <span class="comment">//把p定义为r</span></span><br><span class="line">	&#125;</span><br><span class="line">	r-&gt;next = <span class="literal">NULL</span>;                          <span class="comment">//表示链表结束了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里 <strong>r=p</strong> 难理解</p>
+<p>就是将 <strong>p</strong> 的地址赋给 <strong>r</strong>     </p>
+<p>这样 <strong>r</strong> 又代表是尾结点 再进行循环</p>
+<h3 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h3><p>有些不提供结构struct的程序设计语言 可以使用一堆并行数组<strong>data(数据</strong>)和<strong>cur(游标)</strong>来处理 </p>
+<p>数组<strong>第一个元素</strong>的cur用来存放<strong>备用链表</strong>第一个结点的下标</p>
+<p>数组的<strong>最后一个元素</strong>的cur用来存放第一个插入元素的下标 没有插入元素则为0</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>游标</td>
+<td align="right">2(cur)</td>
+<td align="right">2(cur)</td>
+<td align="right">3(cur)</td>
+<td align="right">1(cur)</td>
+</tr>
+<tr>
+<td></td>
+<td align="right"></td>
+<td align="right">data</td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>下标</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+</tr>
+</tbody></table>
+<p>类似上表这样的结构 </p>
+<p><strong>插入和删除</strong>操作的时候 只需要更改数组中的<strong>游标</strong>就可以实现 时间复杂度为O(1)</p>
+<p>总之灵活使用游标的移动交换 就能实现很多操作</p>
+<p><strong>缺点</strong> 就是还是没有解决表长难以确定的问题</p>
+<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p>就是将单链表中<strong>终端结点</strong>的指针由空指针转为指向<strong>头结点</strong>(或者第一个结点)</p>
+<p>可以不用<strong>头指针</strong>使用<strong>尾指针</strong>这样查找终端的时间复杂度为O(1) </p>
+<p>根据问题选用适合的结构</p>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>在单链表的基础上可以增加一个指向其<strong>前驱结点</strong>的指针</p>
+<p>许多操作和单链表是相同的 但是多出了<strong>prior指针</strong> 操作时需要格外小心 </p>
+<p>这样能够有效<strong>提高</strong>算法的<strong>时间性能</strong> 这是一种牺牲了空间来换取时间的方法 </p>
+<h1 id="3-栈与队列"><a href="#3-栈与队列" class="headerlink" title="3.栈与队列"></a>3.栈与队列</h1><h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈(stack)"></a>栈(stack)</h2><p>是一种规定了只能在<strong>表尾</strong>进行插入和删除的线性表</p>
+<p>允许插入和删除的一端称为<strong>栈顶(top</strong>) 另一端称为<strong>栈底(bottom)</strong></p>
+<p>这种<strong>后进先出(Last In First Out)</strong>的线性表  简称<strong>LIFO</strong>结构</p>
+<p>插入和删除操作 一般我们改名为<strong>push</strong>(压入)和<strong>pop</strong>(弹出) 也就是进栈和出栈</p>
+<h3 id="栈的顺序存储结构-顺序栈"><a href="#栈的顺序存储结构-顺序栈" class="headerlink" title="栈的顺序存储结构(顺序栈)"></a>栈的顺序存储结构(顺序栈)</h3><p>定义一个<strong>top变量</strong>来指示栈顶元素在数组中的位置 从而便于进行操作</p>
+<p>当栈存在一个元素时 top等于0 </p>
+<p>当栈为空时 top等于-1</p>
+<p>当满栈的时候 top等于maxsize-1</p>
+<p>进栈和出栈只需要 移动top指针 再赋值即可 时间复杂度为<strong>O(1)</strong></p>
+<p>同样存在顺序结构的问题 无法事先确定所需的存储空间大小</p>
+<p>可以通过<strong>两栈共享空间(针对两个具有相同数据类型的栈)</strong>可以最大限度利用事先开辟的空间</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">top1↓</th>
+<th align="center"></th>
+<th></th>
+<th></th>
+<th align="center">top2↓</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">data</td>
+<td align="center">data</td>
+<td align="center">data</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td align="center">data</td>
+<td align="center">data</td>
+</tr>
+</tbody></table>
+<p>左边为<strong>栈1</strong> 右边为<strong>栈2</strong> 相同的存储空间为<strong>n</strong></p>
+<p>若栈1为空 top1=-1 若栈2为空 top2=n</p>
+<p>若栈2为空 top1=n-1 则栈1满了</p>
+<p>若栈1为空 top2=0 则栈2满了</p>
+<p>各自从自己栈底 向中间靠拢 假如是一种<strong>此消彼长</strong>的情况 这个栈就可以一直使用 </p>
+<p>直到两个指针之间相差1时 则栈满</p>
+<p>不过在进栈和出栈的时候 需要判断是栈1或者栈2</p>
+<h3 id="栈的链式存储结构-链栈"><a href="#栈的链式存储结构-链栈" class="headerlink" title="栈的链式存储结构(链栈)"></a>栈的链式存储结构(链栈)</h3><p>不需要事先考虑所需多大的存储空间 </p>
+<p>只要内存有空间 就能进栈 基本不存在栈满的情况</p>
+<p>进栈和出栈操作类似单链表 时间复杂度为<strong>O(1)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">顺序栈</th>
+<th align="center">链栈</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">需要事先确定一个固定长度</td>
+<td align="center">每个元素都有指针域</td>
+</tr>
+<tr>
+<td align="center">存取时定位很方便</td>
+<td align="center">对于栈的长度无限制</td>
+</tr>
+<tr>
+<td align="center">可能存在内存空间浪费</td>
+<td align="center">需要增加内存的开销</td>
+</tr>
+</tbody></table>
+<p>如果元素变化不可预料 最好用链栈 否则它的变化在可控范围内 使用顺序栈更好</p>
+<p>根据<strong>实际情况</strong>选用适合的结构 若满足LIFO结构 选用栈是比数组和链表来的更简便</p>
+<h3 id="栈的应用—递归"><a href="#栈的应用—递归" class="headerlink" title="栈的应用—递归"></a>栈的应用—递归</h3><p>这里说一个经典的递归例子: <strong>斐波那契数列(Fibonacci)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"></td>
+<td align="left">0</td>
+<td align="center">当n=0</td>
+</tr>
+<tr>
+<td align="right">F(n)=</td>
+<td align="left">1</td>
+<td align="center">当n=1</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td align="left">F(n-1)+F(n-2)</td>
+<td align="center">当n&gt;1</td>
+</tr>
+</tbody></table>
+<p>使用常规的<strong>迭代</strong>的方法代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">40</span>];</span><br><span class="line">	a[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	a[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; a[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt; <span class="number">40</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i] = a[i - <span class="number">1</span>] + a[i - <span class="number">2</span>];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; a[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用 <strong>递归</strong> 代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fbi</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (i &lt; <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> i == <span class="number">0</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Fbi(i - <span class="number">1</span>) + Fbi(i - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; <span class="number">40</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; Fbi(i) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>迭代</strong>使用的是<strong>循环结构</strong> 而<strong>递归</strong>是重复直接调用或间接调用相同的函数的<strong>选择结构</strong></p>
+<p>递归看起来结构更加<strong>清晰 易理解</strong> 但是大量的函数堆积 会<strong>耗费大量时间和内存</strong></p>
+<p>在压入阶段的时候 就是将当前函数的局部变量 参数 返回地址压入栈中 </p>
+<p>然后等到找到符合的条件 弹出阶段时候 从栈顶开始 层层弹出 所以<strong>递归是栈的一种应用</strong></p>
+<h3 id="栈的应用—四则运算表达式求值"><a href="#栈的应用—四则运算表达式求值" class="headerlink" title="栈的应用—四则运算表达式求值"></a>栈的应用—四则运算表达式求值</h3><p>这里总结一下<strong>后缀表达式</strong>也称为<strong>逆波兰(RPN)</strong></p>
+<p>举个例子 265-3*+84/+</p>
+<p>先让265入栈 然后是 “ - “ 所以出栈5作为减数 6作为被减数 得到1 再让它入栈</p>
+<p>这时栈里是21 再入栈3 然后是” * “ 所以出栈3和1相乘 得到3 再让它入栈</p>
+<p>下面是” + “ 出栈3和2相加 得到5 让它入栈  同理这样一直运算下去 得到运算结果 比较简单</p>
+<p>比较难的是 如何将<strong>中缀表达式转后缀表达式</strong></p>
+<p>中缀表达式例子 “ 2+(6-5)×3+8÷4 “</p>
+<p>第一个字符是数字2 直接输出2 然后是符号” + “ 让它入栈</p>
+<p>第三个符号是” ( “ 继续入栈 第四个是字符6 直接输出  接着是 “ - “ 让它入栈</p>
+<p>第六个符号是 “ - “让它入栈 接着是字符5 直接输出  </p>
+<p>目前栈内情况为</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">(</td>
+</tr>
+<tr>
+<td align="center">+</td>
+</tr>
+</tbody></table>
+<p>输出为<strong>265</strong></p>
+<p>下一个是符号” ) “ 则弹出栈顶 直到符号” ( “为止  则输出为<strong>265-</strong> 栈内只剩下” + “</p>
+<p>紧接着进入的是符号” × “ 因为它的优先级大于栈顶的” + “ 所以不输出 </p>
+<p>接着的是数字3 就输出  之后是符号” + “ 比栈顶的” × “优先级低  </p>
+<p>所以要将栈内的元素出栈 这时输出为<strong>265-3*+</strong>  再将” + “入栈</p>
+<p>接着是数字8 输出 然后是” ÷ “ 优先级大于栈顶的” + “ 所以入栈</p>
+<p>最后是数字4 输出  再将栈内符号输出 最终得到后缀表达式为<strong>265-3*+84/+</strong></p>
+<p>整个过程都充分利用了栈的后进先出的特性来处理</p>
+<p>计算机就是将人类好理解的中缀表达式转换为后缀表达式 再将后缀表达式进行运算 得出结果</p>
+<h2 id="队列-queue"><a href="#队列-queue" class="headerlink" title="队列(queue)"></a>队列(queue)</h2><p>就是一种只允许在一端进行插入 另一端进行删除的<strong>线性表</strong></p>
+<p>先进先出的线性表 简称为<strong>FIFO</strong></p>
+<h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h3><p>由于顺序队列存在与顺序存储结构相同的缺点 </p>
+<p>在删除操作的时候 时间复杂度为O(n)</p>
+<p>这里引入了两个指针 指向队头元素的<strong>front指针</strong> 指向队尾元素的<strong>rear指针</strong></p>
+<p>这样入队移动rear指针 出队移动front指针 时间复杂度就只有O(1)</p>
+<p>但是存在 front指针前面有空闲 而rear指针已经到了数组最后一个位置 的<strong>假溢出</strong>现象 </p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center">rear↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>于是 我们可以将后面满了 让rear指针从头开始的移动 这种顺序存储结构叫做循环队列</p>
+<table>
+<thead>
+<tr>
+<th align="center">rear↓</th>
+<th align="center"></th>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center">a5</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>当front == rear时 存在两种情况 队列为空或者队列为满</p>
+<p>所以为了防止这种情况发生 我们可以保留一个元素空间 也就是说队列满时 数组中还有一个空闲单元</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">rear↓</th>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a6</td>
+<td align="center"></td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center">a5</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>如上图 这种情况就为队列满</p>
+<p>这时存在rear可能比front大 也可能比front小 队列满不一定是相差一个元素</p>
+<table>
+<thead>
+<tr>
+<th align="center">front↓</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">rear↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a1</td>
+<td align="center">a2</td>
+<td align="center">a3</td>
+<td align="center">a4</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>队列满的条件应该是 <strong>(rear+1)%QueueSize == front</strong>   </p>
+<p>通用的计算队列长度公式为 <strong>(rear-front+QueueSize)%QueueSize</strong></p>
+<p>这里循环队列的入队和出队 时间复杂度为<strong>O(1)</strong></p>
+<h3 id="队列的链式存储结构"><a href="#队列的链式存储结构" class="headerlink" title="队列的链式存储结构"></a>队列的链式存储结构</h3><p>其实就是线性表的单链表 只不过它只能尾进头出而已 简称为链队列</p>
+<p>front指针指向头结点 rear指针指向终端结点 空队列时 他们同时指向头结点</p>
+<p>入队和出队操作跟单链表很相像 时间复杂度为<strong>O(1)</strong></p>
+<p>虽然与循环队列时间复杂度都为O(1) 但是循环队列需要事先确定长度 可能造成空间浪费</p>
+<p>而链队列 不存在这个问题 但是由于它需要一个next指针域 产生空间上的开销 </p>
+<p><strong>总的来说</strong> 可以确定队列长度 使用循环队列 反之使用链队列</p>
+<h1 id="4-串-string"><a href="#4-串-string" class="headerlink" title="4.串(string)"></a>4.串(string)</h1><p>是由零个或多个字符组成的有限序列 又叫<strong>字符串</strong></p>
+<p>零个字符的串 称为空串(null string)  <strong>空格串不是空串</strong> 它是包含一个或者多个空格的串</p>
+<p>常用字符使用标准的<strong>ASCII</strong>编码 由8位二进制数可以表示256个字符 包含英语为主的语言和一些特殊符号</p>
+<p>后来有了<strong>Unicode</strong>编码 由16位二进制数 表示一个字符 2<sup>16</sup>种 6.5万多个字符 表示世界上所有语言的所有字符</p>
+<h2 id="串的比较"><a href="#串的比较" class="headerlink" title="串的比较"></a>串的比较</h2><p>给定两个串 : s= “a<sub>1</sub>a<sub>2</sub>……a<sub>n</sub>“            t= “b<sub>1</sub>b<sub>2</sub>……b<sub>n</sub>“ </p>
+<p>1.n&lt;m,且a<sub>i</sub>=b<sub>i</sub>  (i=1,2,……,n)  例如s=”hap”, t=”happy”  这时s&lt;t</p>
+<p>2.存在k&lt;=min(m,n)   使得a<sub>i</sub>=b<sub>i</sub>  (i=1,2,……,n)  且a<sub>k</sub>&lt;b<sub>k</sub>  例如s=”happen” , t=”happy” </p>
+<p>字母 <strong>y</strong> 的ASCII编码为 <strong>121</strong>   字母 <strong>e</strong> 的ASCII编码为 <strong>101</strong>           所以e&lt;y 则这时s&lt;t</p>
+<h2 id="串的存储结构"><a href="#串的存储结构" class="headerlink" title="串的存储结构"></a>串的存储结构</h2><p><strong>串的顺序存储结构</strong>  是用一组地址连续的存储单元来存储串中的字符序列</p>
+<p>一般是定长数组来定义 所以有预定义的<strong>最大串长度</strong> 可以将<strong>实际的串长度值</strong> 存放在数组的0下标位置</p>
+<p>它规定在串值最后加一个不计入串长度的<strong>结束标记字符</strong> 比如 “\0” 来表示串值的终结</p>
+<p>但是很多插入替换连接的操作都可能使串序列的长度超过了数组的长度Maxsize</p>
+<p>这时候存在一个自由存储区 叫做<strong>“堆”</strong> 在后面树中会介绍 可以在程序执行过程中<strong>动态分配</strong>串值的存储空间</p>
+<p><strong>串的链式存储</strong> 一个结点可以存放一个或者多个字符 以免空间的浪费 </p>
+<p>可是 确定每个结点存多少个字符 又成了一个问题  否则得不偿失 反而影响了串处理的性能</p>
+<p>不过链式存储在<strong>连接串和串</strong>的时候还是有一定方便 总的来说不如顺序存储灵活</p>
+<h2 id="KMP模式匹配算法"><a href="#KMP模式匹配算法" class="headerlink" title="KMP模式匹配算法"></a>KMP模式匹配算法</h2><p>相比朴素模式匹配算法   有效的避免了重复遍历的情况 </p>
+<p>这里将主串位置的下标赋值给i    子串位置的下标赋值给j</p>
+<p>为了减少回溯   <strong>i</strong> 是不回溯 那么就要考虑 <strong>j</strong> 值的变化 这里将子串中 <strong>j</strong> 变化定义为一个数组 <strong>next</strong>  </p>
+<h3 id="next数组的推导"><a href="#next数组的推导" class="headerlink" title="next数组的推导"></a>next数组的推导</h3><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"></td>
+<td>0          当j=1时</td>
+</tr>
+<tr>
+<td align="right">next[j]=</td>
+<td>Max    当{ k | 1&lt;k&lt;j ,且 <strong>‘  P<sub>1</sub>…P<sub>k-1</sub> ‘ = ‘ P<sub>j-k+1</sub>…..P<sub>(j-1)</sub> ‘</strong> }</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td>1          其他情况</td>
+</tr>
+</tbody></table>
+<p>直接用一些例子来学习</p>
+<p><strong>1.T=”abcdex”</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">j</th>
+<th align="left">123456</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="left">abcdex</td>
+</tr>
+<tr>
+<td align="center">next[j]</td>
+<td align="left">011111</td>
+</tr>
+</tbody></table>
+<p>1) 当j=1时  next[j]=0   这里是定义</p>
+<p>2) 当j=2时  j 由 1 到 j-1 就只有字符 “a” 属于其他情况 next[2]=1</p>
+<p>3) 当j=3时  j 由 1 到 j-1 就只有字符 “ab” 显然 不相等 属于其他情况 next[3]=1</p>
+<p>4) 后面同理 所以T串的 next[j] 为011111</p>
+<p><strong>2.T=”abcabx”</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">j</th>
+<th align="left">123456</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="left">abcabx</td>
+</tr>
+<tr>
+<td align="center">next[j]</td>
+<td align="left">011123</td>
+</tr>
+</tbody></table>
+<p>1) 当j=1时 next[1]=0</p>
+<p>2) 当j=2,3,4 同上例说明 next[2]=next[3]=next[4]=1</p>
+<p>3) 当j=5 此时 j 由 1 到 j-1 的串是 “ <u>a</u>bc<em>a</em> ” 前缀下划线表示的 “<u>a</u>“ 与后缀斜体表示的 “<em>a</em>“ 相等</p>
+<p>​                                                 因此可以推算出k值为2   所以next[5]=2</p>
+<p>4) 当j=6 此时 j 由 1 到 j-1 的串是 “ <u>ab</u>c<em>ab</em> “ 前缀和后缀相等  推算出 k值为3 因此 next[6]=3</p>
+<p>可以根据规律 发现 前后缀一个字符相等 k值为2 两个字符相等 k值为3  <strong>n个字符相等 k值为n+1</strong></p>
+<h3 id="nextval数组值推导"><a href="#nextval数组值推导" class="headerlink" title="nextval数组值推导"></a>nextval数组值推导</h3><p>next数组在主串和子串前面几个字符相同的情况下 会存在一些缺陷</p>
+<p>所以后来有人改进 得出了nextval数组</p>
+<p>举个例子好理解</p>
+<p><strong>T=”ababaaaba”</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">j</th>
+<th align="left">123456789</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="left">ababaaaba</td>
+</tr>
+<tr>
+<td align="center">next[j]</td>
+<td align="left">011234223</td>
+</tr>
+<tr>
+<td align="center">nextval[j]</td>
+<td align="left">010104210</td>
+</tr>
+</tbody></table>
+<p>1) 当 j=1 时   nextval[1]=0</p>
+<p>2) 当 j=2 时   因第二位字符 “b” 的next值为 1 所以与第一位字符 “a” 比较后 <strong>不相等</strong></p>
+<p>​                                                                                则nextval[2]=next[2]=1 维持原值</p>
+<p>3) 当 j=3 时   因第三位字符 “a” 的next值为 1 所以与第一位字符 “a” 比较后   <strong>相等</strong></p>
+<p>​     则nextval[3]=nextval[1]=0    这里将nextval[1]赋值给它 是因为它的next值为 1</p>
+<p>4) 当 j=4时    因第四位字符 “b” 的next值为 2 所以与第二位字符 “b” 比较后  <strong>相等</strong></p>
+<p>​    则nextval[4]=nextval[2]=1    这里将nextval[2]赋值给它 是因为它的next值为 2</p>
+<p>5) 后面同理  所以得出上述的nextval[j] </p>
+<p><strong>规律:</strong> </p>
+<p>如果a位的字符 next值为b  然后找到b位的字符与a位字符比较</p>
+<p>若相等 则nextval[a]=next[b]    若不相等 则nextval[a]=next[a]</p>
+<h2 id="串的index函数"><a href="#串的index函数" class="headerlink" title="串的index函数"></a>串的index函数</h2><p>待补充中…………….</p>
+<h1 id="5-树-Tree"><a href="#5-树-Tree" class="headerlink" title="5.树(Tree)"></a>5.树(Tree)</h1><p>树时n(n&gt;=0)个结点的<strong>有限集</strong>   n=0时称为空树 </p>
+<p>在任一非空树中   (1) <strong>有且仅有</strong>一个特定的称为<strong>根(Root)</strong>的结点</p>
+<p>(2) 当n&gt;1时   其余结点可分为m(m&gt;0)个<strong>互不相交</strong>的有限集   每个集合本身是一棵树 并称为根的<strong>子树(SubTree)</strong></p>
+<p>结点拥有的子树数称为结点的<strong>*度(Degree)</strong>   树的度是树内各结点的度的最大值</p>
+<p>度为0的结点称为 <strong>叶结点(Leaf)</strong> 或 终端结点 </p>
+<p>结点的子树的根称为该结点的<strong>孩子(Child)</strong>   孩子称该结点为<strong>双亲(Parent)</strong> </p>
+<p>同一个双亲的孩子之间互称<strong>兄弟(Sibling)</strong> 结点的<strong>祖先</strong>是从根到该结点所经分支上所有结点 反之为<strong>子孙</strong></p>
+<p>结点的<strong>层次(Level)</strong>从根开始 根为第一层 根的孩子为第二层  树中结点的最大层次称为树的 <strong>*深度(Depth)</strong> 或 高度</p>
+<p>如果将书中结点的各子树看成从左至右是有次序的 <strong>不能互换</strong>的 则称该树为<strong>有序树</strong> 否则称为<strong>无序树</strong></p>
+<p><strong>森林(Forest)</strong>是m(m&gt;=0)棵互不相交的树</p>
+<h2 id="树的存储结构"><a href="#树的存储结构" class="headerlink" title="树的存储结构"></a>树的存储结构</h2><h3 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h3><p>每个结点中data存储数据 和 parent指针 根结点可设置为-1  这样我们根据<strong>parent指针</strong>找到双亲 时间复杂度为O(1)</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>为了方便找到孩子  可以改进一下 加入一个结点<strong>最左边孩子的域</strong> 如果没有孩子为-1</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+<th align="center">firstchild</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>(不过只能解决0-2个孩子结点 寻找孩子的问题 )</p>
+<p>为了能体现各兄弟之间的关系 可以再增加一个<strong>右兄弟域</strong>来体现 如果不存在右兄弟 则为-1</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+<th align="center">firstchild</th>
+<th align="center">rightsib</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="孩子表示法"><a href="#孩子表示法" class="headerlink" title="孩子表示法"></a>孩子表示法</h3><p>由于树中每个结点可能有多个子树 可以考虑用多重链表 </p>
+<p>即每个结点有多个指针域  每个指针指向一颗子树的根结点  有两种比较容易想到的方案</p>
+<p>方案一  </p>
+<table>
+<thead>
+<tr>
+<th align="center">data</th>
+<th align="center">child1</th>
+<th align="center">child2</th>
+<th align="center">…….</th>
+<th align="center">childd</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>每个结点的长度相同   如果树中各结点的度差距很大的时候 会造成<strong>大量空间浪费</strong></p>
+<p>方案二   </p>
+<table>
+<thead>
+<tr>
+<th align="center">data</th>
+<th align="center">degree</th>
+<th align="center">child1</th>
+<th align="center">child2</th>
+<th align="center">…..</th>
+<th align="center">childd</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>加入一个degree表示该结点的度数 从而添加孩子数 每个结点的长度是不一样的</p>
+<p>克服了浪费空间 但是由于每个结点的链表是<strong>不相同的结构</strong> 而且要<strong>维护结点的度的数值</strong> 在<strong>时间</strong>上可能会损耗更多</p>
+<p>为了既可以减少空指针的浪费又能使结点结构相同 可以<strong>分两步</strong>进行</p>
+<p>先将每个结点放到一个<strong>顺序存储结构的数组</strong>中 再将每个结点的孩子关系放到一个<strong>单链表</strong>中体现</p>
+<p>大概就是将每个结点的孩子结点用单链表排列起来 则n个结点就有n个孩子链表 叶子结点则为空链表</p>
+<p>然后n个单链表中的n个头指针又组成一个线性表 使用顺序存储结构 放进一个一维数组中 再加入双亲方便查找</p>
+<table>
+<thead>
+<tr>
+<th align="center">下标</th>
+<th align="center">data</th>
+<th align="center">parent</th>
+<th align="center">firstchild</th>
+<th align="center"></th>
+<th align="center">child</th>
+<th align="center">next</th>
+<th></th>
+<th align="center">child</th>
+<th align="center">next</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">A</td>
+<td align="center">-1</td>
+<td align="center">1</td>
+<td align="center">→</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td>→</td>
+<td align="center">2</td>
+<td align="center">^</td>
+</tr>
+</tbody></table>
+<h3 id="孩子兄弟表示法"><a href="#孩子兄弟表示法" class="headerlink" title="孩子兄弟表示法"></a>孩子兄弟表示法</h3><p>观察后发现 任意一棵树 它的结点的<strong>第一个孩子</strong>如果存在就是唯一的 <strong>它的右兄弟</strong>如果存在也是唯一的</p>
+<p>因此我们设置两个指针 一个是第一个孩子 一个是右孩子  这种表示方法 给<strong>查找某个结点孩子</strong>提供了方便</p>
+<p>这样只需要通过结点的<strong>first</strong>找到该结点长子 再通过长子结点的<strong>rightsib</strong>找到它的二弟 直到找到你要的孩子</p>
+<table>
+<thead>
+<tr>
+<th align="center">data</th>
+<th align="center">firstchild</th>
+<th align="center">rightsib</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="二叉树-Binary-Tree"><a href="#二叉树-Binary-Tree" class="headerlink" title="二叉树(Binary Tree)"></a>二叉树(Binary Tree)</h2><p>由一个根结点和两颗<strong>互不相交</strong>的 分别称为根结点的左子树和右子树的二叉树组成</p>
+<p>1)  每个结点最多有两颗子树 </p>
+<p>2)  左子树和右子树有顺序 次序不可颠倒</p>
+<p>3)  即使结点只有一颗子树 也要分清是左子树还是右子树</p>
+<h3 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h3><p><strong>斜树</strong> 只有左子树叫左斜树  只有右子树叫右斜树</p>
+<p><strong>满二叉树</strong> 所有<strong>分支结点</strong>都存在左子树和右子树 并且<strong>所有叶子</strong>都在同一层上</p>
+<p>​                <strong>同深度</strong>的二叉树中 满二叉树<strong>结点最多</strong> <strong>叶子数最多</strong></p>
+<p><strong>完全二叉树(未完成的满二叉树)</strong>  </p>
+<p>​                     叶子只出现在<strong>最下面两层</strong></p>
+<p>​                     <strong>最下层</strong>叶子一定在<strong>左边连续位置</strong>           <strong>倒数二层</strong>若有叶子 一定在<strong>右边连续位置</strong></p>
+<p>​                     若结点度只有1 那该结点只有<strong>左孩子</strong>    <strong>同样结点数</strong>的二叉树 完全二叉树的<strong>深度最小</strong></p>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p><strong>性质1:</strong> 在二叉树的第 <strong>i</strong> 层上至多有 <strong>2<sup>i-1</sup></strong> 个结点  (i&gt;=1)</p>
+<p><strong>性质2:</strong> 深度为 <strong>k</strong> 的二叉树至多有 <strong>2<sup>k</sup>-1</strong> 个结点  (k&gt;=1)   注意与性质1区分</p>
+<p><strong>性质3:</strong> 对于任何一颗二叉树 <strong>T</strong> 如果其终端结点数为 <strong>n<sub>0</sub></strong> ; 度为 <strong>2</strong> 的结点数为 <strong>n<sub>2</sub></strong>  ; 则<strong>n<sub>0</sub>=n<sub>2</sub>+1</strong></p>
+<p>推导过程分为三步  ①  <strong>n=n<sub>2</sub>+n<sub>1</sub>+n<sub>0</sub></strong>   n为结点总数  度为0,1,2的结点数相加可得</p>
+<p>②  <strong>n=2n<sub>2</sub>+n<sub>1</sub>+1</strong>   按照连线来找结点 度为2的结点 可以找到2个结点 度为1的结点只能找到1个结点 再加上根结点</p>
+<p>③  <strong>2n<sub>2</sub>+n<sub>1</sub>+1=n<sub>2</sub>+n<sub>1</sub>+n<sub>0</sub></strong>    简单化简后 就可得到性质3  <strong>n<sub>0</sub>=n<sub>2</sub>+1</strong></p>
+<p><strong>性质4:</strong> 具有 n 个结点的完全二叉树的深度为<strong>[log<sub>2</sub>n]+1</strong>  ( [x]表示不大于x的最大整数 )</p>
+<p>① 由性质2可知 满二叉树的结点 n=2<sup>k</sup>-1  将这个公式倒推 可以得到 <strong>k=log<sub>2</sub>(n+1)</strong></p>
+<p>② 根据完全二叉树的定义 <strong>叶子只出现在最下面两层</strong>  可以得出它的结点数一定多于2<sup><strong>k-1</strong></sup>-1   即满足 2<sup><strong>k-1</strong></sup>-1&lt;n&lt;=2<sup><strong>k</strong></sup>-1    </p>
+<p>③ 由于结点数n是整数 所以 n&gt;=2<sup>k-1</sup>  且 n&lt;2<sup>k</sup>     这一步需要多思考一下  即现在式子为2<sup>k-1</sup>&lt;=n&lt;2<sup>k</sup></p>
+<p>④ 不等式两边取对数 可以得到 k-1&lt;=log<sub>2</sub>n&lt;k   就是代入log<sub>2</sub>x的时递增函数中  不等号方向不变</p>
+<p>⑤ 由于k作为树的深度 也是整数  所以可以得到上述性质  k=[log<sub>2</sub>n]+1</p>
+<p><strong>性质5:</strong> 对一颗有n个结点的完全二叉树的结点按层序编号(每层从左到右) 对其中任一结点 <strong>i</strong> 有以下规律</p>
+<p>1) 如果 <strong>i=1</strong> 则结点 <strong>i</strong> 是二叉树的根 无双亲 ；如果 <strong>i&gt;1</strong> 则其双亲是结点 <strong>[ i/2 ]</strong></p>
+<p>2) 如果 <strong>2i&gt;n</strong> 则结点 <strong>i</strong> 无左孩子 否则其左孩子是结点 <strong>2i</strong></p>
+<p>3) 如果 <strong>2i+1&gt;n</strong> 则结点 <strong>i</strong> 无右孩子 否则其右孩子是 <strong>2i+1</strong></p>
+<p>这3条性质 看图记忆比较好 理解起来并不难</p>
+<h3 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h3><p><strong>顺序结构</strong> 可以实现 但是大多数时候 会浪费大量存储空间  适用性并不强  例如如下</p>
+<table>
+<thead>
+<tr>
+<th>下标</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>A</td>
+<td>^</td>
+<td>B</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>C</td>
+<td>^</td>
+<td>D</td>
+</tr>
+</tbody></table>
+<p><strong>二叉链表</strong> 因为每个结点最多2个孩子 所以可以设计一个数据域 两个指针域如下</p>
+<table>
+<thead>
+<tr>
+<th align="center">lchild</th>
+<th align="center">data</th>
+<th align="center">rchild</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">B</td>
+<td align="center">A</td>
+<td align="center">C</td>
+</tr>
+</tbody></table>
+<p>如果有需要 可以再增加一个指向其<strong>双亲</strong>的指针域</p>
+<h3 id="遍历二叉树"><a href="#遍历二叉树" class="headerlink" title="遍历二叉树"></a>遍历二叉树</h3><p>是指从根节点出发 按照某种 <strong>次序</strong> 依次 <strong>访问</strong> 二叉树中所有结点</p>
+<p>接下来介绍几种访问的次序</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">A</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">E</td>
+</tr>
+<tr>
+<td align="center">F</td>
+<td align="center"></td>
+<td align="center">G</td>
+<td align="center"></td>
+<td align="center">H</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><strong>前序遍历</strong></p>
+<p>若二叉树为空 则空操作返回 否则先访问根结点 然后前序遍历左子树 再前序遍历右子树 </p>
+<p>得到 <strong>ABDFGCEH</strong></p>
+<p><strong>中序遍历</strong></p>
+<p>若二叉树为空 则空操作返回 否则<strong>从根结点开始</strong> 中序遍历根结点的左子树 然后访问根结点 最后中序遍历右子树 得到 <strong>FDGBACHE</strong></p>
+<p><strong>后序遍历</strong> </p>
+<p>若二叉树为空 则空操作返回 否则从根结点开始 后序遍历根结点的右子树 然后后序遍历根结点的左子树 最后访问根结点 得到 <strong>FGDBHECA</strong></p>
+<p><strong>层序遍历</strong></p>
+<p>若树为空 则空操作返回 否则从树的第一层开始 也就是根结点开始访问 从上而下 逐层遍历 </p>
+<p>在同一层中 按照从左到右的顺序对结点逐个访问 得到 <strong>ABCDEFGH</strong></p>
+<p><strong>通过不同的遍历提供了对结点依次处理的不同方式 可以在遍历过程中 对结点进行各种操作</strong></p>
+<h3 id="推导遍历的结果"><a href="#推导遍历的结果" class="headerlink" title="推导遍历的结果"></a>推导遍历的结果</h3><p>已知一颗二叉树的前序遍历序列为ABCDEF 中序遍历序列为CBAEDF 求后序遍历结果</p>
+<p>可以先确定A为根结点 然后通过中序遍历 知道了CB为左子树 EDF为右子树</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">A</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">C、B</td>
+<td align="center"></td>
+<td align="center">E、D、F</td>
+</tr>
+</tbody></table>
+<p>接着由前序中的<strong>BC</strong> 先打印B后打印C 所以B是A结点的左孩子 中序遍历中是<strong>CB</strong> 所以确定C为左孩子</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">A</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center"></td>
+<td align="center">E、D、F</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>再看前序中为<strong>DEF</strong> 意味着D是A结点的右孩子 再来看中序中为<strong>EDF</strong> 则确定了 E为左孩子 F为右孩子</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th align="center">A</th>
+<th align="left"></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>B</td>
+<td align="center"></td>
+<td align="left">D</td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td></td>
+<td align="center">E</td>
+<td align="left"></td>
+<td>F</td>
+</tr>
+</tbody></table>
+<p>复原二叉树后 再用后序遍历则 得到结果为 <strong>CBEFDA</strong></p>
+<p>同理 已知<strong>中序和后序</strong>也可以推导出 <strong>二叉树</strong>  </p>
+<p>但是 已知<strong>前序和后序</strong>是<strong>不能</strong>推导出二叉树的   所以中序遍历很关键 </p>
+<h3 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h3><p>在建立二叉树过程中 会产生很多空指针域 假如 n 个结点的二叉树 一共 2n 个指针域   n-1 条分支线数</p>
+<p>那么就存在 2n-(n-1)= <strong>n+1</strong> 个空指针域      我们可以在空指针域中存放某种遍历次序下的前驱和后继</p>
+<p>这种指向前驱和后继的<strong>指针</strong>称为 <strong>线索</strong>    加上线索的二叉链表 称为<strong>线索链表</strong> 相应的二叉树为<strong>线索二叉树</strong></p>
+<p>为了区分 child 是指向它的孩子 还是 指向前驱或后继  我们需要引入一个区分标志 标志域 <strong>ltag</strong> 和 <strong>rtag</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">lchild</th>
+<th align="center">ltag</th>
+<th align="center">data</th>
+<th align="center">rtag</th>
+<th align="center">rchild</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>当标志域为 <strong>0</strong> 时为指向该结点的孩子                  为 <strong>1</strong> 时为指向该结点的前驱或者后继</p>
+<p>p-&gt;ltag==<strong>Link</strong>   含义就是 等于 0 为孩子          p-&gt;rtag==<strong>Thread</strong>  就是 等于 1 为线索 </p>
+<p>如果所用的二叉树 需要<strong>经常遍历</strong>或<strong>查找结点</strong> 需要<strong>某种遍历序列</strong>中的<strong>前驱和后继</strong> 采用线索二叉树的存储结构就很好</p>
+<p>它充分利用了空指针域的空间 并且在创建时候的一次时间复杂度为<strong>O(n)</strong>的遍历 </p>
+<p>以后查前驱后继时间复杂度就为<strong>O(1)</strong></p>
+<h3 id="树、森林与二叉树的转换"><a href="#树、森林与二叉树的转换" class="headerlink" title="树、森林与二叉树的转换"></a>树、森林与二叉树的转换</h3><p><strong>树转换为二叉树</strong></p>
+<p>1) 加线    在所有兄弟之间加一条线</p>
+<p>2) 去线    对树中每个结点 只保留它与第一个<strong>孩子</strong>结点的连线 删除它与其他<strong>孩子</strong>之间的连线</p>
+<p>3) 层次调整   孩子放左侧 兄弟放右侧</p>
+<p><img src="/2019/08/11/summer/1.jpg" alt></p>
+<p><strong>森林转换为二叉树</strong></p>
+<p><img src="/2019/08/11/summer/2.jpg" alt></p>
+<p><strong>二叉树转换为树</strong></p>
+<p><img src="/2019/08/11/summer/3.jpg" alt></p>
+<p><strong>二叉树转换为森林</strong></p>
+<p>首先要先判断 这颗树能不能转换成一棵树还是森林 标准就是看二叉树的<strong>根结点</strong>是否有右孩子</p>
+<p>根结点有右孩子的话 就是森林 如果没有 则为一棵树</p>
+<p><img src="/2019/08/11/summer/4.jpg" alt></p>
 
       
 
@@ -191,16 +1027,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-  
-    <a href="/2019/08/11/my-summer-vacation/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">my summer vacation</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -222,7 +1048,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-struct用法"><span class="toc-number">1.</span> <span class="toc-text">1.struct用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-线性表"><span class="toc-number">2.</span> <span class="toc-text">2.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储结构"><span class="toc-number">2.1.</span> <span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式存储"><span class="toc-number">2.2.</span> <span class="toc-text">链式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表-动态结构"><span class="toc-number">2.2.1.</span> <span class="toc-text">单链表(动态结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态链表"><span class="toc-number">2.2.2.</span> <span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环链表"><span class="toc-number">2.2.3.</span> <span class="toc-text">循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向链表"><span class="toc-number">2.2.4.</span> <span class="toc-text">双向链表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈与队列"><span class="toc-number">3.</span> <span class="toc-text">3.栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈-stack"><span class="toc-number">3.1.</span> <span class="toc-text">栈(stack)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的顺序存储结构-顺序栈"><span class="toc-number">3.1.1.</span> <span class="toc-text">栈的顺序存储结构(顺序栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的链式存储结构-链栈"><span class="toc-number">3.1.2.</span> <span class="toc-text">栈的链式存储结构(链栈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—递归"><span class="toc-number">3.1.3.</span> <span class="toc-text">栈的应用—递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的应用—四则运算表达式求值"><span class="toc-number">3.1.4.</span> <span class="toc-text">栈的应用—四则运算表达式求值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列-queue"><span class="toc-number">3.2.</span> <span class="toc-text">队列(queue)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环队列"><span class="toc-number">3.2.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#队列的链式存储结构"><span class="toc-number">3.2.2.</span> <span class="toc-text">队列的链式存储结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-串-string"><span class="toc-number">4.</span> <span class="toc-text">4.串(string)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#串的比较"><span class="toc-number">4.1.</span> <span class="toc-text">串的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的存储结构"><span class="toc-number">4.2.</span> <span class="toc-text">串的存储结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KMP模式匹配算法"><span class="toc-number">4.3.</span> <span class="toc-text">KMP模式匹配算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#next数组的推导"><span class="toc-number">4.3.1.</span> <span class="toc-text">next数组的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nextval数组值推导"><span class="toc-number">4.3.2.</span> <span class="toc-text">nextval数组值推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串的index函数"><span class="toc-number">4.4.</span> <span class="toc-text">串的index函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树-Tree"><span class="toc-number">5.</span> <span class="toc-text">5.树(Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#树的存储结构"><span class="toc-number">5.1.</span> <span class="toc-text">树的存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#双亲表示法"><span class="toc-number">5.1.1.</span> <span class="toc-text">双亲表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子表示法"><span class="toc-number">5.1.2.</span> <span class="toc-text">孩子表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子兄弟表示法"><span class="toc-number">5.1.3.</span> <span class="toc-text">孩子兄弟表示法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树-Binary-Tree"><span class="toc-number">5.2.</span> <span class="toc-text">二叉树(Binary Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">5.2.1.</span> <span class="toc-text">特殊二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的性质"><span class="toc-number">5.2.2.</span> <span class="toc-text">二叉树的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的存储结构"><span class="toc-number">5.2.3.</span> <span class="toc-text">二叉树的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历二叉树"><span class="toc-number">5.2.4.</span> <span class="toc-text">遍历二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推导遍历的结果"><span class="toc-number">5.2.5.</span> <span class="toc-text">推导遍历的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线索二叉树"><span class="toc-number">5.2.6.</span> <span class="toc-text">线索二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树、森林与二叉树的转换"><span class="toc-number">5.2.7.</span> <span class="toc-text">树、森林与二叉树的转换</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
