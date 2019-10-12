@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 秘密基地</title>
+  <title>排序 | 秘密基地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="秘密基地">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="dizzy">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序">
+<meta property="og:url" content="http://yoursite.com/2019/10/04/排序/index.html">
 <meta property="og:site_name" content="秘密基地">
+<meta property="og:description" content="dizzy">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-12T13:45:30.003Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="秘密基地">
+<meta name="twitter:title" content="排序">
+<meta name="twitter:description" content="dizzy">
   
     <link rel="alternative" href="/atom.xml" title="秘密基地" type="application/atom+xml">
   
@@ -148,36 +153,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-排序" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      排序
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/04/排序/" class="archive-article-date">
+
+        
+        <a href="/2019/10/04/排序/" class="archive-article-date">
   	<time datetime="2019-10-04T13:39:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/04/排序/">排序</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>dizzy </p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p><strong>排序的稳定性</strong></p>
+<p>假设k<del>i</del>=k<del>j</del>  且在排序前 r<del>i</del>领先于r<del>j</del> (即i&lt;j)  排序后r<del>i</del>还是领先于r<del>j</del>  则这个排序是稳定的 例如堆排序和简单排序</p>
+<p>反之为不稳定 例如快速排序和希尔排序 他们是跳跃着进行排序</p>
+<p>排序过程中 待排序的记录都在内存中 叫做<strong>内排序</strong>  当排序的个数过多 需要在内外存之间多次交换数据叫<strong>外排序</strong></p>
+<h2 id="简单排序"><a href="#简单排序" class="headerlink" title="简单排序"></a>简单排序</h2><p><strong>冒泡排序(Bubble Sort)</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(Sqlist *L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,j;</span><br><span class="line">  Status flag=FALSE;      <span class="comment">//用作标记序列是否已经有序了</span></span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=L-&gt;lenght &amp;&amp; flag;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    flag=FALSE;   <span class="comment">//初始化 重新判断是否有序</span></span><br><span class="line">    <span class="keyword">for</span>(j=L-&gt;lenght<span class="number">-1</span>;j&gt;=i;j--)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span>(L-&gt;r[j]&gt;L-&gt;r[j+<span class="number">1</span>])</span><br><span class="line">      &#123;</span><br><span class="line">        swap(L,j,j+<span class="number">1</span>)</span><br><span class="line">        flag=TURE;  <span class="comment">//如果有交换 改为TURE 循环继续进行</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最好的情况是 没有数据的交换 时间复杂度为O(n)  最坏的情况是 逆序 此时需要比较$\frac{n(n-1)}{2}$次 时间复杂度为<strong>O(n^2^)</strong></p>
+<p><strong>简单选择排序(Simple Selection Sort)</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SelectionSort</span><span class="params">(Sqlist *L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,j,min;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=L-&gt;lenght;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    min=i;</span><br><span class="line">    <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;=L-&gt;lenght;j++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span>(L-&gt;r[j]&lt;L-&gt;r[min])</span><br><span class="line">        min=j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i!=min)</span><br><span class="line">    &#123;</span><br><span class="line">      swap(L,i,min);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>无论最好最坏情况 都要进行比较$\frac{n(n-1)}{2}$次 最好情况不需要交换 最坏需要交换n-1次 总的时间复杂度还是为<strong>O(n^2^)</strong></p>
+<p><strong>直接插入排序(Straight Insertion Sort)</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(Sqlist *L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,j;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=L-&gt;lenght;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;r[i]&lt;L-&gt;r[i<span class="number">-1</span>])</span><br><span class="line">    L-&gt;r[<span class="number">0</span>]=L-&gt;r[i];       <span class="comment">//将较小值设置一个哨兵 </span></span><br><span class="line">    <span class="keyword">for</span>(j=i<span class="number">-1</span>;L-&gt;r[j]&gt;L-&gt;[<span class="number">0</span>];j--)  <span class="comment">//与i下标前的每一个值进行比较 找到合适的位置</span></span><br><span class="line">      L-&gt;r[j+<span class="number">1</span>]=L-&gt;r[j];     <span class="comment">//使较大值往后移一个单位</span></span><br><span class="line">    L-&gt;r[j+<span class="number">1</span>]=L-&gt;r[<span class="number">0</span>];    <span class="comment">//将该值插入合适的位置</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最好情况 只有第6行比较 没有移动的记录 时间复杂度为O(n)  最坏需要移动和比较$\frac{n<em>n}{4}$次 总的时间复杂度为*</em>O(n^2^)**</p>
+<h2 id="希尔排序-Shell-Sort"><a href="#希尔排序-Shell-Sort" class="headerlink" title="希尔排序(Shell Sort)"></a>希尔排序(Shell Sort)</h2><p>突破了简单排序时间复杂度都为O(n^2^)的处境   只需要在直接插入排序基础上引入一个<strong>增量</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void Shell Sort(Sqlist *L)</span><br><span class="line">&#123;</span><br><span class="line">  int i,j;</span><br><span class="line">  int increment=L-&gt;length;</span><br><span class="line">  do</span><br><span class="line">  &#123;</span><br><span class="line">    increment=increment/3+1;           //设置增量</span><br><span class="line">    for(i=increment+1;i&lt;=L-&gt;length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      if(L-&gt;r[i]&lt;L-&gt;[i-increment])  //比较相距一个增量的两个值的大小</span><br><span class="line">      &#123;</span><br><span class="line">        L-&gt;r[0]=L-&gt;[i];        //将较小值设置为哨兵</span><br><span class="line">        for(j=i-increment;j&gt;0 &amp;&amp; L-&gt;[j]&gt;L-&gt;[0];j-=increment)  </span><br><span class="line">                                               //每隔一个增量的每个值都与哨兵进行比较</span><br><span class="line">          L-&gt;[j+increment]=L-&gt;[j];   //将比哨兵大的值 向后移动一个增量大小的位置</span><br><span class="line">        L-&gt;[j+increment]=L-&gt;[0];     //将哨兵插入属于它的位置</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  while(increment&gt;1)    //直到增量为1时 循环停止</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果增量选择的很好 时间复杂度可以突破O(n^2^)  达到<strong>O(n^3/2^)</strong>   但是在增量序列必须遵循<strong>最后一个增量为1</strong>的规则</p>
+<p>由于序列中的记录都是<strong>跳跃式的移动</strong>  所以希尔排序是<strong>不稳定</strong>的排序算法 存在开头排序稳定性存在的问题</p>
+<h2 id="堆排序-Heap-Sort"><a href="#堆排序-Heap-Sort" class="headerlink" title="堆排序(Heap Sort)"></a>堆排序(Heap Sort)</h2><p>堆是具有下列性质的<strong>完全二叉树</strong> : 每个结点的大于或等于其左右孩子结点的值 称为<strong>大顶堆</strong> 反之都小于 则为<strong>小顶堆</strong></p>
+<p>堆排序就是建立在堆结构上的算法  算是对于简单选择排序的优化</p>
+<p>我们将待排序的序列构成一个堆结构 这样整个序列的<strong>最大值</strong>就是堆顶的<strong>根</strong>   将根与堆数组末尾元素<strong>交换并移走</strong></p>
+<p>再将剩下的 <strong>n-1</strong>个序列重新构造成一个堆 重复执行 每一次得到<strong>最大值</strong> 这样移走的数就是从小到大排列有序的数列</p>
+<p>堆调整函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void HeapSortAdjust(SqList *L,int s,int m)</span><br><span class="line">&#123;</span><br><span class="line">  int temp,j;</span><br><span class="line">  temp=L-&gt;r[s];</span><br><span class="line">  for(j=s*2;j&lt;=m;j*=2)</span><br><span class="line">  &#123;</span><br><span class="line">    if(j&lt;m &amp;&amp; L-&gt;r[j]&lt;L-&gt;r[j+1])</span><br><span class="line">      ++j;              //下标为j的点是两子树间的较大值</span><br><span class="line">    if(L-&gt;r[j]&lt;temp)</span><br><span class="line">      break;            //下标为s的点是其和其子树最大的结点 不用调整 即退出循环</span><br><span class="line">    L-&gt;[s]=L-&gt;[j];      //将子树中较大值替换掉根结点原有值</span><br><span class="line">    s=j;                //s成为了原子树位置</span><br><span class="line">  &#125;</span><br><span class="line">  L-&gt;[s]=temp;          //原根结点数值较小所以放在子树位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>堆排序函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void HeapSort(SqList *L)</span><br><span class="line">&#123;</span><br><span class="line">  int i;</span><br><span class="line">  for(i=L-&gt;length/2;i&gt;0;i--)      //从length/2下标开始可以遍历到所有 非叶节点 ,很关键</span><br><span class="line">  &#123;</span><br><span class="line">    HeapSortAdjust(L,i,L-&gt;length);  //将待排序的序列构建成一个堆</span><br><span class="line">  &#125;</span><br><span class="line">  for(i=L-&gt;length;i&gt;0;i--)</span><br><span class="line">  &#123;</span><br><span class="line">    swap(L,1,i);                    //将堆顶结点与末尾结点交换</span><br><span class="line">    HeapSortAdjust(L,1,i-1);        //将除了末尾结点的剩下序列进行堆的构建</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>构建堆的时间复杂度为<strong>O(n)</strong>   每次取堆顶并重建堆需要O(logi)的时间  并且需要重复n-1次 时间复杂度为<strong>O(nlogn)</strong></p>
+<p>总的来说堆排序时间复杂度为<strong>O(nlogn)</strong>  空间复杂度上只用了<strong>一个用来交换的暂存单元</strong></p>
+<p>不过由于记录的比较和交换是跳跃进行的 所以堆排序也是一种<strong>不稳定</strong>的排序方法</p>
+<h2 id="归并排序-Merging-Sort"><a href="#归并排序-Merging-Sort" class="headerlink" title="归并排序(Merging Sort)"></a>归并排序(Merging Sort)</h2><p>假设序列含有n个记录 即有n个<strong>长度为1</strong>的子序列 两两<strong>有序的合并</strong>得到<strong>n/2个长度为2</strong>的<strong>有序</strong>子序列(有时会多一个)</p>
+<p>再将他们两两合并 直到得到一个长度为n的有序序列为止 这就是<strong>2路归并排序</strong></p>
+<p><strong>利用递归实现</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort1</span><span class="params">(SqList *L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  MSort(L-&gt;r,L-&gt;r,<span class="number">1</span>,L-&gt;length);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MSort</span><span class="params">(<span class="keyword">int</span> SR[],<span class="keyword">int</span> TR[],<span class="keyword">int</span> s,<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> m;</span><br><span class="line">  <span class="keyword">int</span> TR2[MAXSIZE+<span class="number">1</span>];</span><br><span class="line">  <span class="keyword">if</span>(s=t)</span><br><span class="line">    TR1[s]=SR[s];</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">  m=(s+t)/<span class="number">2</span>;</span><br><span class="line">  MSort(SR[],TR2[],s,m);</span><br><span class="line">  MSort(SR[],TR2[],m+<span class="number">1</span>,t);</span><br><span class="line">  Merge(TR2[],TR1[],s,m,t);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> SR[],<span class="keyword">int</span> TR[],<span class="keyword">int</span> i,<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> j,k,l;</span><br><span class="line">  <span class="keyword">for</span>(j=m+<span class="number">1</span>,k=i;i&lt;=m &amp;&amp; j&lt;=n;k++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span>(SR[j]&lt;SR[i])</span><br><span class="line">      TR[k]=SR[j++];        <span class="comment">//这里是先将SR[j]赋值给TR[k]  j再自增</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      TR[k]=SR[i++];</span><br><span class="line">    <span class="keyword">if</span>(i&lt;=m)                <span class="comment">//说明左边还有剩余</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;=m-i;l++)   <span class="comment">//将剩余SR[i..m]复制到TR[k..m-i]中</span></span><br><span class="line">        TR[k+l]=SR[i+l];      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j&lt;=n)                <span class="comment">//说明右边还有剩余</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;=n-j;l++)   <span class="comment">//同理</span></span><br><span class="line">        TR[k+l]=SR[j+l];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>非递归实现</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort2</span><span class="params">(SqList *L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span>* TR=(<span class="keyword">int</span>*)<span class="built_in">malloc</span>(L-&gt;length*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">  <span class="keyword">int</span> k=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(k&lt;L-&gt;length)</span><br><span class="line">  &#123;</span><br><span class="line">    MergePass(L-&gt;r,TR,k,L-&gt;length);    <span class="comment">//将原来长度为k的无序数组 两两有序归并入TR中</span></span><br><span class="line">    k=k*<span class="number">2</span>;</span><br><span class="line">    MergePass(TR,L-&gt;r,k,L-&gt;length);    <span class="comment">//将TR的有序序列 两两归并回原数组L.r中</span></span><br><span class="line">    k=k*<span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergePass</span><span class="params">(SR[],TR[],s,n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> j;</span><br><span class="line">  <span class="keyword">while</span>(i&lt;=n<span class="number">-2</span>*s+<span class="number">1</span>)                    <span class="comment">//一直归并到数组最后一个数 或 倒数第二个数(剩1个数) 停止</span></span><br><span class="line">  &#123;</span><br><span class="line">    Merge(SR[],TR[],i,i+s<span class="number">-1</span>,i+<span class="number">2</span>s<span class="number">-1</span>);   <span class="comment">//将其两两归并</span></span><br><span class="line">    i=i+<span class="number">2</span>*s;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(i&lt;n-s+<span class="number">1</span>)                          <span class="comment">//归并最后两个序列</span></span><br><span class="line">    Merge(SR[],TR[],i,i+s<span class="number">-1</span>,n)</span><br><span class="line">  <span class="keyword">else</span>                                 <span class="comment">//若最后只剩下单个子序列</span></span><br><span class="line">    <span class="keyword">for</span>(j=i;j&lt;=n;j++)</span><br><span class="line">      TR[j]=SR[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>归并排序只存在两两比较 不存在跳跃 属于<strong>稳定</strong>的排序算法  时间复杂度最好最坏平均都为<strong>O(nlogn)</strong></p>
+<p>虽然<strong>效率很高且稳定</strong> 但是该算法是比较<strong>占用内存</strong>的算法 <strong>非递归</strong>可以将<strong>空间复杂度从O(n+logn)减小到O(n)</strong></p>
+<h2 id="快速排序-Quick-Sort"><a href="#快速排序-Quick-Sort" class="headerlink" title="快速排序(Quick Sort)"></a>快速排序(Quick Sort)</h2><p>选取一个关键字为<strong>枢轴(pivot)</strong>  依据<strong>枢轴划分</strong>使一部分关键字都小于另一部分关键字 从这两部分中<strong>重复选取划分</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QulickSort</span><span class="params">(SqList *L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Qsort(L,<span class="number">1</span>,L-&gt;length);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Qsort</span><span class="params">(SqList *L,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> pivot;</span><br><span class="line">  <span class="keyword">if</span>(low&lt;high)</span><br><span class="line">  &#123;</span><br><span class="line">    pivot=Partition(L,low,high);</span><br><span class="line">    Qsort(L,low,pivot<span class="number">-1</span>);                       <span class="comment">//在枢轴左边再进行一次划分</span></span><br><span class="line">    Qsort(L,pivot+<span class="number">1</span>,high);                      <span class="comment">//在枢轴右边再进行一次划分</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Partition</span><span class="params">(SqList *L,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> pivotkey;</span><br><span class="line">  pivotkey=L-&gt;[low];</span><br><span class="line">   </span><br><span class="line">  <span class="keyword">while</span>(low&lt;high)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span>(low&lt;high &amp;&amp; L-&gt;[high]&gt;pivotkey)        <span class="comment">//从右端开始寻找比枢轴小的值并交换到左端去</span></span><br><span class="line">      high--;</span><br><span class="line">    swap(L,low,high);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(low&lt;high &amp;&amp; L-&gt;[low]&lt;pivotkey)         <span class="comment">//从左端开始寻找比枢轴大的值并交换到右端去</span></span><br><span class="line">      low++;</span><br><span class="line">    swap(L,low,high);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> low;                                 <span class="comment">//返回枢轴在数组中的位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在<strong>最好</strong>的情况下 时间复杂度为<strong>O(nlogn)</strong>   但在<strong>最坏</strong>的情况(待排序的序列为正序或逆序)下 时间复杂度为<strong>O(n^2^)</strong></p>
+<p><strong>平均</strong>情况下 <strong>时间复杂度为O(nlogn)</strong>  <strong>平均</strong>情况下 <strong>空间复杂度为O(n)</strong>    </p>
+<p>由于关键字的比较和交换都是<strong>跳跃进行</strong>的 快速排序也是一种<strong>不稳定的排序算法</strong></p>
+<p><strong>优化选取枢轴(三数取中法)</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> pivotkey;</span><br><span class="line"><span class="keyword">int</span> m=low+(high-low)/<span class="number">2</span>    <span class="comment">//取中间值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(L-&gt;[low]&gt;L-&gt;[high])</span><br><span class="line">  swap(L,low,high);       <span class="comment">//保证左端小右端大</span></span><br><span class="line"><span class="keyword">if</span>(L-&gt;[m]&gt;L-&gt;[high])</span><br><span class="line">  swap(L,high,m);         <span class="comment">//保证中间为较小的值</span></span><br><span class="line"><span class="keyword">if</span>(L-&gt;[m]&gt;L-&gt;[low]);</span><br><span class="line">  swap(L,m,low);          <span class="comment">//保证左端为较小的值</span></span><br><span class="line"></span><br><span class="line">pivotkey=L-&gt;[low];        <span class="comment">//将较小的值作为枢轴</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>优化不必要的交换</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Partition</span><span class="params">(SqList *L,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> pivotkey;</span><br><span class="line">  pivotkey=L-&gt;[low];</span><br><span class="line">  L-&gt;[<span class="number">0</span>]=pivotkey;                      <span class="comment">//将枢轴数先存放起来</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span>(low&lt;high)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span>(low&lt;high &amp;&amp; L-&gt;[high]&gt;pivotkey)</span><br><span class="line">      high--;</span><br><span class="line">    L-&gt;[low]=L-&gt;[high];                 <span class="comment">//采用替换 比起交换性能上有所提高</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(low&lt;high &amp;&amp; L-&gt;[low]&lt;pivotkey)</span><br><span class="line">      low++;</span><br><span class="line">    L-&gt;[low]=L-&gt;[high];                 <span class="comment">//不过替换后最后一个数 需要替换回枢轴的数</span></span><br><span class="line">  &#125;</span><br><span class="line">  L-&gt;[low]=L-&gt;[<span class="number">0</span>];                      <span class="comment">//最后将最后一处的数值换为枢轴数</span></span><br><span class="line">  <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>优化递归操作</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Qsort</span><span class="params">(SqList *L,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> pivot;</span><br><span class="line">  <span class="keyword">while</span>(low&lt;high)                 <span class="comment">//采用了迭代而不是递归 缩短堆栈深度 提高了整体性能</span></span><br><span class="line">  &#123;</span><br><span class="line">    pivot=Partition(L,low,high);</span><br><span class="line">    Qsort(L,low,pivot<span class="number">-1</span>);</span><br><span class="line">    low=pivot+<span class="number">1</span>;                  <span class="comment">//采用了尾递归</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,285 +254,68 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/01/查找Searching/" class="archive-article-date">
-  	<time datetime="2019-10-01T13:37:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/01/查找Searching/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">查找Searching</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/查找Searching/">查找Searching</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#排序"><span class="toc-number">1.</span> <span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单排序"><span class="toc-number">1.1.</span> <span class="toc-text">简单排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#希尔排序-Shell-Sort"><span class="toc-number">1.2.</span> <span class="toc-text">希尔排序(Shell Sort)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序-Heap-Sort"><span class="toc-number">1.3.</span> <span class="toc-text">堆排序(Heap Sort)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#归并排序-Merging-Sort"><span class="toc-number">1.4.</span> <span class="toc-text">归并排序(Merging Sort)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速排序-Quick-Sort"><span class="toc-number">1.5.</span> <span class="toc-text">快速排序(Quick Sort)</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/24/图Graph/" class="archive-article-date">
-  	<time datetime="2019-09-24T13:35:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/24/图Graph/">图Graph</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/21/树Tree/" class="archive-article-date">
-  	<time datetime="2019-09-21T13:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/21/树Tree/">树Tree</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/16/串string/" class="archive-article-date">
-  	<time datetime="2019-09-16T13:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/16/串string/">串string</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/07/栈与队列/" class="archive-article-date">
-  	<time datetime="2019-09-07T13:12:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/07/栈与队列/">栈与队列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/线性表List/" class="archive-article-date">
-  	<time datetime="2019-09-01T12:32:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/01/线性表List/">线性表List</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/11/summer/" class="archive-article-date">
-  	<time datetime="2019-08-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/11/summer/">struct用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -496,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
