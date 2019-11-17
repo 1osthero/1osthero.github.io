@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 秘密基地</title>
+  <title>函数与对象 | 秘密基地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="秘密基地">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="努力奋斗">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数与对象">
+<meta property="og:url" content="http://yoursite.com/2019/11/17/函数与对象/index.html">
 <meta property="og:site_name" content="秘密基地">
+<meta property="og:description" content="努力奋斗">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-17T05:24:30.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="秘密基地">
+<meta name="twitter:title" content="函数与对象">
+<meta name="twitter:description" content="努力奋斗">
   
     <link rel="alternative" href="/atom.xml" title="秘密基地" type="application/atom+xml">
   
@@ -148,36 +153,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-函数与对象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      函数与对象
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/17/函数与对象/" class="archive-article-date">
+
+        
+        <a href="/2019/11/17/函数与对象/" class="archive-article-date">
   	<time datetime="2019-11-17T04:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/17/函数与对象/">函数与对象</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>努力奋斗</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h1 id="引用和指针的区别"><a href="#引用和指针的区别" class="headerlink" title="引用和指针的区别"></a>引用和指针的区别</h1><p>(1) 引用：跟原来的变量实质上是同一个东西，只不过是原变量的一个<strong>别名</strong>而已。<br>     指针：指针是一个变量，只不过这个变量存储的是一个<strong>地址</strong>，指向内存的一个存储单元；</p>
+<p>(2)可以有const指针，但是没有const引用；</p>
+<p>(3)指针可以有多级，但是引用只能是一级（int **p合法； 而 int &amp;&amp;a是不合法的）</p>
+<p>(4)指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候必须<strong>初始化</strong>；</p>
+<p>(5)指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就不会再改变了。</p>
+<p>(6)”sizeof引用”得到的是所指向的变量(对象)的大小，</p>
+<p>​     而”sizeof指针”得到的是指针本身的大小(也就是地址 长整型 4)；</p>
+<p>(7)指针和引用的自增(++)运算意义不一样；</p>
+<h1 id="左值与右值"><a href="#左值与右值" class="headerlink" title="左值与右值"></a>左值与右值</h1><p>左值相当于地址值，右值相当于数据值。右值指的是引用了一个存储在某个内存地址里的数据。<br>看看a = b的含义。其实就是 将 “b地址内存里面的数据”，替换掉”a地址内存里面的数据”</p>
+<h1 id="函数指针的用法"><a href="#函数指针的用法" class="headerlink" title="函数指针的用法"></a>函数指针的用法</h1><p><strong>可以将实现同一功能的很多个模块统一起来标识，这样一来更容易后期的维护，系统结构更加清晰。</strong><br><strong>或者归纳为：便于分层设计、利于系统抽象、降低耦合度以及使接口与实现分开</strong></p>
+<p>函数指针的声明：<br>bool (*pf)(int, int);<br>//pf指向一个函数，该函数的参数是两个int，返回值是bool类型</p>
+<p>函数指针的初始化:<br>例如有这样一个函数：bool cmp(int a, int b);<br>pf = cmp//注意cmp形参及返回值应与声明的的函数指针的类型匹配</p>
+<p>调用函数指针:<br>bool b = pf(3,5);<br>等价于直接调用：bool b = cmp（3,5）；</p>
+<h1 id="显式实例化-显式具体化-的区别"><a href="#显式实例化-显式具体化-的区别" class="headerlink" title="显式实例化 显式具体化 的区别"></a>显式实例化 显式具体化 的区别</h1><p><strong>显式具体化</strong></p>
+<p>但对于某些特殊类型，可能不适合模板实现，需要重新定义实现，此时就是使用显式具体化。</p>
+<p>首先的声明一个函数模板，然后再定义特殊类型，如下：</p>
+<p>template<typename t> </typename></p>
+<p>void func(T &amp;a,T &amp;b);//首先声明函数模板</p>
+<p>//例如结构体类型的变量不适合，那么我们需要将函数模板再具体一些</p>
+<p>struct strc {……};//结构体</p>
+<p><strong>template&lt;&gt;void func<strc>(strc &amp;t1,strc &amp;t2);</strc></strong></p>
+<p>然后再在主函数后面写出实现方法。</p>
+<p>//函数模板的实现</p>
+<p>template<typename t> </typename></p>
+<p>void func(T &amp;a,T &amp;b)</p>
+<p>{……}</p>
+<p>//显式具体化的实现</p>
+<p>template&lt;&gt;void func<strc>(strc &amp;t1,strc &amp;t2)</strc></p>
+<p>{……}</p>
+<p><strong>实例化</strong></p>
+<p>假如我们在主函数中要调用函数模板，他就会在主函数中创建一个实例，不调用它就不会产生实例，<br>比如a，b都是int型的，在主函数中有这一句： func(a,b);那么就会创建void func(int,int)这样一个函数，<br>这种叫<strong>隐式实例化</strong>。后面有程序用了，编译器才会根据模板生成一个实例函数。</p>
+<p>还有一种叫显式实例化，不用将相应的实参传递给形参才创建实例，而是显示的声明需要程序创建这个实例，在函数体里声明：</p>
+<p><strong>template void func<char>(char &amp;,char &amp;);</char></strong></p>
+<p>无论是否程序有用，编译器都会生成一个实例函数。</p>
+<p>显式实例化和显式具体化声明<strong>注意区分</strong>。一个template后有&lt;&gt;,一个则没有。</p>
+<h1 id="对象的new和delete"><a href="#对象的new和delete" class="headerlink" title="对象的new和delete"></a>对象的new和delete</h1><p>创建对象时候使用了New就在<strong>堆</strong>中分配空间 不然就是在<strong>栈</strong>中分配<br>栈中的内存的分配和释放由系统管理 而堆中的程序员手动释放<br>new创建类对象需要指针接收，一处初始化，多处使用<br>new创建类对象使用完需delete销毁<br>new创建对象直接使用堆空间，而局部不用new定义类对象则使用栈空间<br>new对象指针用途广泛，比如作为函数返回值、函数参数等<br>频繁调用场合并不适合new，就像new申请和释放内存一样</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,364 +231,67 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/16/字符和字符串处理的一些问题/" class="archive-article-date">
-  	<time datetime="2019-11-16T12:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/16/字符和字符串处理的一些问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字符和字符串处理的一些问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/16/字符和字符串处理的一些问题/">字符和字符串处理的一些问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#引用和指针的区别"><span class="toc-number">1.</span> <span class="toc-text">引用和指针的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#左值与右值"><span class="toc-number">2.</span> <span class="toc-text">左值与右值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数指针的用法"><span class="toc-number">3.</span> <span class="toc-text">函数指针的用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#显式实例化-显式具体化-的区别"><span class="toc-number">4.</span> <span class="toc-text">显式实例化 显式具体化 的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对象的new和delete"><span class="toc-number">5.</span> <span class="toc-text">对象的new和delete</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/20/变量的一些规则/" class="archive-article-date">
-  	<time datetime="2019-10-20T09:38:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/20/变量的一些规则/">变量的一些规则</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/04/排序/" class="archive-article-date">
-  	<time datetime="2019-10-04T13:39:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/04/排序/">排序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/01/查找Searching/" class="archive-article-date">
-  	<time datetime="2019-10-01T13:37:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/查找Searching/">查找Searching</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/24/图Graph/" class="archive-article-date">
-  	<time datetime="2019-09-24T13:35:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/24/图Graph/">图Graph</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/21/树Tree/" class="archive-article-date">
-  	<time datetime="2019-09-21T13:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/21/树Tree/">树Tree</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/16/串string/" class="archive-article-date">
-  	<time datetime="2019-09-16T13:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/16/串string/">串string</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/07/栈与队列/" class="archive-article-date">
-  	<time datetime="2019-09-07T13:12:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/07/栈与队列/">栈与队列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/线性表List/" class="archive-article-date">
-  	<time datetime="2019-09-01T12:32:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/01/线性表List/">线性表List</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -576,8 +321,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
