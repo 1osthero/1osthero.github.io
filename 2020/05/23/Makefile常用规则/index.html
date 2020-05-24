@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 秘密基地</title>
+  <title>Makefile常用规则 | 秘密基地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="秘密基地">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="简单的总结一下Makefile常用的操作">
+<meta name="keywords" content="Makefile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Makefile常用规则">
+<meta property="og:url" content="http://yoursite.com/2020/05/23/Makefile常用规则/index.html">
 <meta property="og:site_name" content="秘密基地">
+<meta property="og:description" content="简单的总结一下Makefile常用的操作">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-05-23T11:25:20.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="秘密基地">
+<meta name="twitter:title" content="Makefile常用规则">
+<meta name="twitter:description" content="简单的总结一下Makefile常用的操作">
   
     <link rel="alternative" href="/atom.xml" title="秘密基地" type="application/atom+xml">
   
@@ -148,36 +153,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Makefile常用规则" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/23/Makefile常用规则/" class="archive-article-date">
-  	<time datetime="2020-05-23T09:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/23/Makefile常用规则/">Makefile常用规则</a>
+    <h1 class="article-title" itemprop="name">
+      Makefile常用规则
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/23/Makefile常用规则/" class="archive-article-date">
+  	<time datetime="2020-05-23T09:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>简单的总结一下Makefile常用的操作</p>
+<a id="more"></a>
+
+<h1 id="书写规则"><a href="#书写规则" class="headerlink" title="书写规则"></a>书写规则</h1><p>Makefile是一种配置文件，它由make程序执行。</p>
+<h2 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h2><p>​    基本的格式是:<br>target(目标):  dependencis(依赖的文件)… \n<br>[Tab]gcc commands1<br>[Tab]gcc commands2<br>[Tab]…………<br>这一块就是一个执行单元 可以有很多执行单元 然后组成一个Makefile配置文件</p>
+<p>​    这里还有三个十分重要的变量 经常会使用到：<br>$@代表目标文件，$^代表所有的依赖文件， $&lt;代表第一个依赖文件，反斜杠(\)是换行符的意思。</p>
+<h2 id="结尾的clean"><a href="#结尾的clean" class="headerlink" title="结尾的clean"></a>结尾的clean</h2><p>​    一般结尾都是以clean目标结束，clean不是一个文件，它只不过是一个动作名字，有点像C语言中的lable一样，所以冒号后什么也没有，那么，make就不会自动去找文件的依赖性，也就不会自动执行其后所定义的命令。<br>要执行其后的命令，就要在make命令后明显得指出这个lable的名字，例如 make clean 这样子<br>我们可以在一个makefile中定义不用的编译或是和编译无关的命令，比如程序的打包，程序的备份，等等<br>​     可以在目标名前面加上  .PHONY : clean</p>
+<p>类似:    .PHONY: clean</p>
+<p>​             clean:</p>
+<p>​                 rm *.o temp                     (注意这一行开头的TAB)<br>只要有这个声明，不管是否有“clean”文件，要运行“clean”这个目标，只有“make clean”这样。</p>
+<h2 id="make命令的使用"><a href="#make命令的使用" class="headerlink" title="make命令的使用"></a>make命令的使用</h2><p>​    并且make会在当前目录下找名字叫“Makefile”或“makefile”的文件。<br>如果找到，它会找文件中的第一个目标文件（target），并把这个文件作为最终的目标文件。<br>所以第一个目标文件类似main函数一样，是很重要的位置。</p>
+<p>​    如果要指定特定的Makefile，你可以使用make的“-f”和“–file”参数，<br>如：make -f Make.Linux或make –file Make.AIX。</p>
+<h2 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h2><p>​    在开头可以自己定义一些变量，存放后面多次出现的相同内容，利用$(变量名)来使用。有点类似c的宏定义<br>objects = main.o kbd.o command.o display.o <br>​        insert.osearch.o files.o utils.o<br>edit : $(objects)<br>​        cc -o edit $(objects)</p>
+<h2 id="make的自动推导"><a href="#make的自动推导" class="headerlink" title="make的自动推导"></a>make的自动推导</h2><p>​    只要make看到一个目标名为[.o]文件，它就会自动的把[.c]文件加在依赖关系中，<br>如果make找到一个whatever.o，那么whatever.c，就会是whatever.o的依赖文件。<br>并且 cc -c whatever.c 也会被推导出来。cc 就是指定你Makefile所用的编译器，一般默认是gcc。<br>​    这里顺便复习一下gcc -c和gcc -o的区别：<br>-c   这里是编译和汇编，但不会连接生成可执行文件，而是生成.o后缀的文件<br>-o &lt;文件名&gt;  可以更改生成的执行文件的名字  gcc main.o -o main.exe 就是将main.o改成可执行文件main.exe</p>
+<h2 id="引用其他的makefile"><a href="#引用其他的makefile" class="headerlink" title="引用其他的makefile"></a>引用其他的makefile</h2><p>​     在Makefile使用include关键字可以把别的Makefile包含进来，这很像C语言的#include，被包含的文件会原模原样的放在当前文件的包含位置。include的语法是：include&lt;filename&gt;<br>​    例如我们有foo.make，a.mk，b.mk，c.mk，以及一个变量bar其中包含着makefile文件，可以如下表示<br>include foo.make *.mk $(bar) 等价于<br>include foo.make a.mk b.mk c.mk＋bar内所包含的makefile文件</p>
+<h1 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h1><p>​    1.读入所有的Makefile。<br>​    2.读入被include的其他Makefile<br>​    3.初始化文件中的变量<br>​    4.推导隐晦规则(上面说到的自动推导)，并分析所有规则。<br>​    5.为所有目标文件创建依赖关系链。<br>​    6.根据依赖关系(文件是否存在或修改的时间顺序)，决定哪些目标要重新生成。<br>​    7.执行生成命令。</p>
+<h2 id="文件搜寻"><a href="#文件搜寻" class="headerlink" title="文件搜寻"></a>文件搜寻</h2><p>​     在一些大的工程中，有大量的源文件，我们通常的做法是把这许多的源文件分类，并存放在不同的目录中。<br>所以，最好的方法是把一个路径告诉make，让make在自动去找。<br>​    Makefile文件中的特殊变量<strong>“VPATH”</strong>就是完成这个功能的，如果没有指明这个变量，make只会在当前的目录中去找寻依赖文件和目标文件。如果定义了这个变量，那么，make就会在当当前目录找不到的情况下，到所指定的目录中去找寻文件了。</p>
+<p>​    两种搜寻方法:</p>
+<ol>
+<li><p>Makefile文件中的特殊变量“VPATH”         书写格式是VPATH = src:../headers<br>如果没有指明这个变量，make只会在当前的目录中去找寻依赖文件和目标文件<br>上面的的定义指定两个目录，“src”和“../headers”，<br>make会按照这个顺序进行搜索。目录由“冒号”分隔。（当然，当前目录永远是最高优先搜索的地方）</p>
+</li>
+<li><p>使用make的“vpath”关键字（注意，它是全小写的），这不是变量，这是一个make的关键字<br>他有3种使用方法:<br>2.1 vpath &lt;pattern&gt; &lt;directories&gt; 为符合模式&lt;pattern&gt;的文件指定搜索目录&lt;directories&gt;<br>2.2 vpath &lt; pattern&gt;                         清除符合模式&lt; pattern&gt;的文件的搜索目录。<br>2.3 vpath                                             清除所有已被设置好了的文件搜索目录。</p>
+<p>vapth使用方法中的&lt; pattern&gt;需要包含“%”字符。“%”的意思是匹配零或若干字符，<br>例如，“%.h”表示所有以“.h”结尾的文件。&lt;pattern&gt;指定了要搜索的文件集，<br>而&lt;directories&gt;则指定了的文件集的搜索的目录。例如：<br>vpath %.h ../headers</p>
+<p>该语句表示，要make在“../headers”目录下搜索所有以“.h”结尾的文件。(如果某文件在当前目录没有找到的话)</p>
+</li>
+</ol>
+<h2 id="自动生成依赖性"><a href="#自动生成依赖性" class="headerlink" title="自动生成依赖性"></a>自动生成依赖性</h2><p>​    如果是一个比较大型的工程，你必需清楚哪些C文件包含了哪些头文件，并且，你在加入或删除头文件时，也需要小心地修改Makefile，这是一个很没有维护性的工作。为了避免这种繁重而又容易出错的事情，我们可以使用C/C++编译的一个功能。大多数的C/C++编译器都支持一个“-M”的选项，即自动找寻源文件中包含的头文件，并生成一个依赖关系。例如，如果我们执行下面的命令：</p>
+<p>   cc -M main.c</p>
+<p>其输出是：</p>
+<p>   main.o : main.c defs.h</p>
+<p>​    我们可以为每一个“name.c”的文件都生成一个“name.d”的Makefile文件，[.d]文件中就存放对应[.c]文件的依赖关系。然后我们可以写出[.c]文件和[.d]文件的依赖关系，并让make自动更新或自成[.d]文件，并把其包含在我们的主Makefile中，这样，我们就可以自动化地生成每个文件的依赖关系了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,57 +223,68 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/26/cctype字符函数库/" class="archive-article-date">
-  	<time datetime="2020-02-26T08:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/26/cctype字符函数库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cctype字符函数库</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/26/cctype字符函数库/">cctype字符函数库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#书写规则"><span class="toc-number">1.</span> <span class="toc-text">书写规则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本格式"><span class="toc-number">1.1.</span> <span class="toc-text">基本格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结尾的clean"><span class="toc-number">1.2.</span> <span class="toc-text">结尾的clean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#make命令的使用"><span class="toc-number">1.3.</span> <span class="toc-text">make命令的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的使用"><span class="toc-number">1.4.</span> <span class="toc-text">变量的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#make的自动推导"><span class="toc-number">1.5.</span> <span class="toc-text">make的自动推导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用其他的makefile"><span class="toc-number">1.6.</span> <span class="toc-text">引用其他的makefile</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工作方式"><span class="toc-number">2.</span> <span class="toc-text">工作方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件搜寻"><span class="toc-number">2.1.</span> <span class="toc-text">文件搜寻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动生成依赖性"><span class="toc-number">2.2.</span> <span class="toc-text">自动生成依赖性</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -268,8 +313,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
