@@ -170,108 +170,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>1.chmod 修改文件属性</strong></p>
-<p>chmod u=权限,g=权限,o=权限 文件目录名</p>
-<p>chmod u+权限,g+权限,o+权限 文件目录名</p>
-<p><strong>2.chown 修改文件的拥有者或组</strong></p>
-<p><strong>3.cat 显示文件内容</strong></p>
-<p><strong>4.sudo 切换到root账号</strong></p>
-<p><strong>5.souce 在当前bash环境下读取并执行File中的命令</strong></p>
-<p><strong>6.[TAB] 自动补全</strong></p>
-<p><strong>7.unzip 解压zip后缀文件</strong></p>
-<p>tar -xf 解压tar后缀文件 </p>
-<p>// -x是解开的意思 -f使用该文件名 -v显示过程</p>
-<p>如果后缀还带 gz 加-z  合起来就是-xzvf  -f必须在结尾</p>
-<p><strong>9.mv 移动文件或文件夹</strong></p>
-<p><strong>10.export 设置或显示环境变量</strong></p>
-<p><strong>11.pwd 显示当前路径</strong></p>
-<p><strong>12.ar,nm,objdump可以查看文件对象里的内容</strong></p>
-<p><a href="https://blog.csdn.net/princess9/article/details/6785108" target="_blank" rel="noopener">https://blog.csdn.net/princess9/article/details/6785108</a></p>
-<p><strong>13.Linux xargs命令</strong></p>
-<p>可以捕捉一个命令的输出，然后传递给另一个命令。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"a.*"</span> | xargs grep -r <span class="string">"abc"</span> . </span><br><span class="line"><span class="comment">// 这里可以先搜索所有a.*的文件， </span></span><br><span class="line"><span class="comment">// 然后放入管道中，执行第二条-grep命令 找出指定文件中包含abc的文件内容</span></span><br></pre></td></tr></table></figure>
-
-<p>也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># cat test.txt </span></span><br><span class="line">a b c d e f g </span><br><span class="line">h i j k l m n </span><br><span class="line">o p q r s t u </span><br><span class="line">v w x y z  </span><br><span class="line"></span><br><span class="line"><span class="comment">//可以转换成单行输出  </span></span><br><span class="line"></span><br><span class="line"><span class="meta"># cat test.txt | xargs </span></span><br><span class="line">a b c d e f g h i j k l m n o p q r s t u v w x y z  </span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以使用-n选项进行规定每行数量</span></span><br><span class="line"><span class="meta"># cat test.txt | xargs -n3</span></span><br><span class="line">a b c  </span><br><span class="line">d e f </span><br><span class="line">g h i </span><br><span class="line">j k l  </span><br><span class="line">m n o </span><br><span class="line">p q r  </span><br><span class="line">s t u </span><br><span class="line">v w x  </span><br><span class="line">y z</span><br></pre></td></tr></table></figure>
-
-<p><strong>14.cp -rp</strong>   </p>
-<p>-r代表循环复制  -p代表保留原文件属性(文件修改时间，访问权限等) 一般都是一起使用的。</p>
-<p><strong>15.export 命令   用于设置或显示环境变量</strong></p>
-<p>export LD_LIBRARY_PATH=XXXXXX    可以设置动态库文件所在的位置</p>
-<p>export -p  列出当前所有的环境变量</p>
-<p><strong>16.chmod 改变一个或者多个文件的存取模式 (mod)</strong></p>
-<p>常见用法是chmod 777 filename 每个文件或者目录由三个权限组成</p>
-<p>7代表 4(读)+2(写)+1(执行)  上述命令表示 三种用户都可以进行读写和执行</p>
-<p><strong>17.strip XX</strong> </p>
-<p>可以去除文件中一些符号信息和调试信息，使文件变小</p>
-<p><strong>18. apt</strong></p>
-<p>apt serch XXX 可以搜索linux下 需要的软件</p>
-<p>apt命令做个总结</p>
-<table>
-<thead>
-<tr>
-<th><strong>apt命令</strong></th>
-<th><strong>命令的功能</strong></th>
-<th><strong>取代的命令</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>apt install</td>
-<td>安装软件包</td>
-<td>apt-get install</td>
-</tr>
-<tr>
-<td>apt remove</td>
-<td>移除软件包</td>
-<td>apt-get remove</td>
-</tr>
-<tr>
-<td>apt purge</td>
-<td>移除软件包以及配置文件</td>
-<td>apt-get purge</td>
-</tr>
-<tr>
-<td>apt updata</td>
-<td>刷新存储库索引</td>
-<td>apt-get updata</td>
-</tr>
-<tr>
-<td>apt upgrade</td>
-<td>升级所有可以升级的软件包</td>
-<td>apt-get upgrade</td>
-</tr>
-<tr>
-<td>apt autoremove</td>
-<td>自动删除不需要的包</td>
-<td>apt-get autoremove</td>
-</tr>
-<tr>
-<td>apt full-upgrade</td>
-<td>升级软件包时自动处理依赖关系</td>
-<td>apt-get dist-upgrade</td>
-</tr>
-<tr>
-<td>apt search</td>
-<td>搜寻应用程序</td>
-<td>apt-cache search</td>
-</tr>
-<tr>
-<td>apt show</td>
-<td>显示安装细节</td>
-<td>apt-cache show</td>
-</tr>
-</tbody></table>
-<p><strong>19.Linux如何获取系统中连接的外部设备信息</strong></p>
-<p><strong>ls -l /dev/</strong> 显示不隐藏文件的详细信息 可以查看最近接入的外部设备端口详细信息</p>
-<p><strong>ls -a</strong> 显示当前路径下 所有文件和文件夹包括隐藏的文件。</p>
-<p><strong>lsusb</strong>  显示系统中以及连接到系统的USB信息</p>
-<p><strong>id</strong> 可以显示实际和有效的用户ID(UID)和组ID(GID)</p>
-<p>可以在路径 <strong>/dev</strong>下寻找所需要外部设备，通过获取到访问这些外部设备的端口。</p>
-<p>我们可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。</p>
-<p>Linux沿袭Unix的风格，将所有设备认成是一个文件。</p>
-<p>在串口通讯时候，创建Serial对象的时候，需要将该端口的路径当作参数传入用来初始化对象。</p>
-<p><strong>20.ip addr 获取本地IP地址的指令</strong></p>
-
+        <p>简单的总结一下linux常用的指令</p>
+        
       
 
       
@@ -1097,11 +997,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
