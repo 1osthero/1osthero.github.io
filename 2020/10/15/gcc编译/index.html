@@ -6,26 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>树Tree | 秘密基地</title>
+  <title>gcc编译 | 秘密基地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="dizzy">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="简单的总结一下用到的gcc知识">
+<meta name="keywords" content="gcc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树Tree">
-<meta property="og:url" content="http://yoursite.com/2019/09/21/树Tree/index.html">
+<meta property="og:title" content="gcc编译">
+<meta property="og:url" content="http://yoursite.com/2020/10/15/gcc编译/index.html">
 <meta property="og:site_name" content="秘密基地">
-<meta property="og:description" content="dizzy">
+<meta property="og:description" content="简单的总结一下用到的gcc知识">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/09/21/树Tree/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/09/21/树Tree/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/09/21/树Tree/3.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/09/21/树Tree/4.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/09/21/树Tree/5.jpg">
-<meta property="og:updated_time" content="2019-10-12T13:44:44.561Z">
+<meta property="og:updated_time" content="2020-10-15T14:26:32.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树Tree">
-<meta name="twitter:description" content="dizzy">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/21/树Tree/1.jpg">
+<meta name="twitter:title" content="gcc编译">
+<meta name="twitter:description" content="简单的总结一下用到的gcc知识">
   
     <link rel="alternative" href="/atom.xml" title="秘密基地" type="application/atom+xml">
   
@@ -159,429 +153,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-树Tree" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-gcc编译" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      树Tree
+      gcc编译
     </h1>
   
 
         
-        <a href="/2019/09/21/树Tree/" class="archive-article-date">
-  	<time datetime="2019-09-21T13:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
+        <a href="/2020/10/15/gcc编译/" class="archive-article-date">
+  	<time datetime="2020-10-15T14:25:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>dizzy </p>
+        <p>简单的总结一下用到的gcc知识</p>
 <a id="more"></a>
 
-<h1 id="树-Tree"><a href="#树-Tree" class="headerlink" title="树(Tree)"></a>树(Tree)</h1><p>树时n(n&gt;=0)个结点的<strong>有限集</strong>   n=0时称为空树 </p>
-<p>在任一非空树中   (1) <strong>有且仅有</strong>一个特定的称为<strong>根(Root)</strong>的结点</p>
-<p>(2) 当n&gt;1时   其余结点可分为m(m&gt;0)个<strong>互不相交</strong>的有限集   每个集合本身是一棵树 并称为根的<strong>子树(SubTree)</strong></p>
-<p>结点拥有的子树数称为结点的<strong>*度(Degree)</strong>   树的度是树内各结点的度的最大值</p>
-<p>度为0的结点称为 <strong>叶结点(Leaf)</strong> 或 终端结点 </p>
-<p>结点的子树的根称为该结点的<strong>孩子(Child)</strong>   孩子称该结点为<strong>双亲(Parent)</strong> </p>
-<p>同一个双亲的孩子之间互称<strong>兄弟(Sibling)</strong> 结点的<strong>祖先</strong>是从根到该结点所经分支上所有结点 反之为<strong>子孙</strong></p>
-<p>结点的<strong>层次(Level)</strong>从根开始 根为第一层 根的孩子为第二层  树中结点的最大层次称为树的 <strong>*深度(Depth)</strong> 或 高度</p>
-<p>如果将书中结点的各子树看成从左至右是有次序的 <strong>不能互换</strong>的 则称该树为<strong>有序树</strong> 否则称为<strong>无序树</strong></p>
-<p><strong>森林(Forest)</strong>是m(m&gt;=0)棵互不相交的树</p>
-<h2 id="树的存储结构"><a href="#树的存储结构" class="headerlink" title="树的存储结构"></a>树的存储结构</h2><h3 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h3><p>每个结点中data存储数据 和 parent指针 根结点可设置为-1  这样我们根据<strong>parent指针</strong>找到双亲 时间复杂度为O(1)</p>
-<table>
-<thead>
-<tr>
-<th align="center">下标</th>
-<th align="center">data</th>
-<th align="center">parent</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>为了方便找到孩子  可以改进一下 加入一个结点<strong>最左边孩子的域</strong> 如果没有孩子为-1</p>
-<table>
-<thead>
-<tr>
-<th align="center">下标</th>
-<th align="center">data</th>
-<th align="center">parent</th>
-<th align="center">firstchild</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>(不过只能解决0-2个孩子结点 寻找孩子的问题 )</p>
-<p>为了能体现各兄弟之间的关系 可以再增加一个<strong>右兄弟域</strong>来体现 如果不存在右兄弟 则为-1</p>
-<table>
-<thead>
-<tr>
-<th align="center">下标</th>
-<th align="center">data</th>
-<th align="center">parent</th>
-<th align="center">firstchild</th>
-<th align="center">rightsib</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<h3 id="孩子表示法"><a href="#孩子表示法" class="headerlink" title="孩子表示法"></a>孩子表示法</h3><p>由于树中每个结点可能有多个子树 可以考虑用多重链表 </p>
-<p>即每个结点有多个指针域  每个指针指向一颗子树的根结点  有两种比较容易想到的方案</p>
-<p>方案一  </p>
-<table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">child1</th>
-<th align="center">child2</th>
-<th align="center">…….</th>
-<th align="center">childd</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>每个结点的长度相同   如果树中各结点的度差距很大的时候 会造成<strong>大量空间浪费</strong></p>
-<p>方案二   </p>
-<table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">degree</th>
-<th align="center">child1</th>
-<th align="center">child2</th>
-<th align="center">…..</th>
-<th align="center">childd</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>加入一个degree表示该结点的度数 从而添加孩子数 每个结点的长度是不一样的</p>
-<p>克服了浪费空间 但是由于每个结点的链表是<strong>不相同的结构</strong> 而且要<strong>维护结点的度的数值</strong> 在<strong>时间</strong>上可能会损耗更多</p>
-<p>为了既可以减少空指针的浪费又能使结点结构相同 可以<strong>分两步</strong>进行</p>
-<p>先将每个结点放到一个<strong>顺序存储结构的数组</strong>中 再将每个结点的孩子关系放到一个<strong>单链表</strong>中体现</p>
-<p>大概就是将每个结点的孩子结点用单链表排列起来 则n个结点就有n个孩子链表 叶子结点则为空链表</p>
-<p>然后n个单链表中的n个头指针又组成一个线性表 使用顺序存储结构 放进一个一维数组中 再加入双亲方便查找</p>
-<table>
-<thead>
-<tr>
-<th align="center">下标</th>
-<th align="center">data</th>
-<th align="center">parent</th>
-<th align="center">firstchild</th>
-<th align="center"></th>
-<th align="center">child</th>
-<th align="center">next</th>
-<th></th>
-<th align="center">child</th>
-<th align="center">next</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">A</td>
-<td align="center">-1</td>
-<td align="center">1</td>
-<td align="center">→</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td>→</td>
-<td align="center">2</td>
-<td align="center">^</td>
-</tr>
-</tbody></table>
-<h3 id="孩子兄弟表示法"><a href="#孩子兄弟表示法" class="headerlink" title="孩子兄弟表示法"></a>孩子兄弟表示法</h3><p>观察后发现 任意一棵树 它的结点的<strong>第一个孩子</strong>如果存在就是唯一的 <strong>它的右兄弟</strong>如果存在也是唯一的</p>
-<p>因此我们设置两个指针 一个是第一个孩子 一个是右孩子  这种表示方法 给<strong>查找某个结点孩子</strong>提供了方便</p>
-<p>这样只需要通过结点的<strong>first</strong>找到该结点长子 再通过长子结点的<strong>rightsib</strong>找到它的二弟 直到找到你要的孩子</p>
-<table>
-<thead>
-<tr>
-<th align="center">data</th>
-<th align="center">firstchild</th>
-<th align="center">rightsib</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<h2 id="二叉树-Binary-Tree"><a href="#二叉树-Binary-Tree" class="headerlink" title="二叉树(Binary Tree)"></a>二叉树(Binary Tree)</h2><p>由一个根结点和两颗<strong>互不相交</strong>的 分别称为根结点的左子树和右子树的二叉树组成</p>
-<p>1)  每个结点最多有两颗子树 </p>
-<p>2)  左子树和右子树有顺序 次序不可颠倒</p>
-<p>3)  即使结点只有一颗子树 也要分清是左子树还是右子树</p>
-<h3 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h3><p><strong>斜树</strong> 只有左子树叫左斜树  只有右子树叫右斜树</p>
-<p><strong>满二叉树</strong> 所有<strong>分支结点</strong>都存在左子树和右子树 并且<strong>所有叶子</strong>都在同一层上</p>
-<p>​                <strong>同深度</strong>的二叉树中 满二叉树<strong>结点最多</strong> <strong>叶子数最多</strong></p>
-<p><strong>完全二叉树(未完成的满二叉树)</strong>  </p>
-<p>​                     叶子只出现在<strong>最下面两层</strong></p>
-<p>​                     <strong>最下层</strong>叶子一定在<strong>左边连续位置</strong>           <strong>倒数二层</strong>若有叶子 一定在<strong>右边连续位置</strong></p>
-<p>​                     若结点度只有1 那该结点只有<strong>左孩子</strong>    <strong>同样结点数</strong>的二叉树 完全二叉树的<strong>深度最小</strong></p>
-<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p><strong>性质1:</strong> 在二叉树的第 <strong>i</strong> 层上至多有 <strong>2<sup>i-1</sup></strong> 个结点  (i&gt;=1)</p>
-<p><strong>性质2:</strong> 深度为 <strong>k</strong> 的二叉树至多有 <strong>2<sup>k</sup>-1</strong> 个结点  (k&gt;=1)   注意与性质1区分</p>
-<p><strong>性质3:</strong> 对于任何一颗二叉树 <strong>T</strong> 如果其终端结点数为 <strong>n<sub>0</sub></strong> ; 度为 <strong>2</strong> 的结点数为 <strong>n<sub>2</sub></strong>  ; 则<strong>n<sub>0</sub>=n<sub>2</sub>+1</strong></p>
-<p>推导过程分为三步  ①  <strong>n=n<sub>2</sub>+n<sub>1</sub>+n<sub>0</sub></strong>   n为结点总数  度为0,1,2的结点数相加可得</p>
-<p>②  <strong>n=2n<sub>2</sub>+n<sub>1</sub>+1</strong>   按照连线来找结点 度为2的结点 可以找到2个结点 度为1的结点只能找到1个结点 再加上根结点</p>
-<p>③  <strong>2n<sub>2</sub>+n<sub>1</sub>+1=n<sub>2</sub>+n<sub>1</sub>+n<sub>0</sub></strong>    简单化简后 就可得到性质3  <strong>n<sub>0</sub>=n<sub>2</sub>+1</strong></p>
-<p><strong>性质4:</strong> 具有 n 个结点的完全二叉树的深度为<strong>[log<sub>2</sub>n]+1</strong>  ( [x]表示不大于x的最大整数 )</p>
-<p>① 由性质2可知 满二叉树的结点 n=2<sup>k</sup>-1  将这个公式倒推 可以得到 <strong>k=log<sub>2</sub>(n+1)</strong></p>
-<p>② 根据完全二叉树的定义 <strong>叶子只出现在最下面两层</strong>  可以得出它的结点数一定多于2<sup><strong>k-1</strong></sup>-1   即满足 2<sup><strong>k-1</strong></sup>-1&lt;n&lt;=2<sup><strong>k</strong></sup>-1    </p>
-<p>③ 由于结点数n是整数 所以 n&gt;=2<sup>k-1</sup>  且 n&lt;2<sup>k</sup>     这一步需要多思考一下  即现在式子为2<sup>k-1</sup>&lt;=n&lt;2<sup>k</sup></p>
-<p>④ 不等式两边取对数 可以得到 k-1&lt;=log<sub>2</sub>n&lt;k   就是代入log<sub>2</sub>x的时递增函数中  不等号方向不变</p>
-<p>⑤ 由于k作为树的深度 也是整数  所以可以得到上述性质  k=[log<sub>2</sub>n]+1</p>
-<p><strong>性质5:</strong> 对一颗有n个结点的完全二叉树的结点按层序编号(每层从左到右) 对其中任一结点 <strong>i</strong> 有以下规律</p>
-<p>1) 如果 <strong>i=1</strong> 则结点 <strong>i</strong> 是二叉树的根 无双亲 ；如果 <strong>i&gt;1</strong> 则其双亲是结点 <strong>[ i/2 ]</strong></p>
-<p>2) 如果 <strong>2i&gt;n</strong> 则结点 <strong>i</strong> 无左孩子 否则其左孩子是结点 <strong>2i</strong></p>
-<p>3) 如果 <strong>2i+1&gt;n</strong> 则结点 <strong>i</strong> 无右孩子 否则其右孩子是 <strong>2i+1</strong></p>
-<p>这3条性质 看图记忆比较好 理解起来并不难</p>
-<h3 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h3><p><strong>顺序结构</strong> 可以实现 但是大多数时候 会浪费大量存储空间  适用性并不强  例如如下</p>
-<table>
-<thead>
-<tr>
-<th>下标</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>A</td>
-<td>^</td>
-<td>B</td>
-<td>^</td>
-<td>^</td>
-<td>^</td>
-<td>C</td>
-<td>^</td>
-<td>D</td>
-</tr>
-</tbody></table>
-<p><strong>二叉链表</strong> 因为每个结点最多2个孩子 所以可以设计一个数据域 两个指针域如下</p>
-<table>
-<thead>
-<tr>
-<th align="center">lchild</th>
-<th align="center">data</th>
-<th align="center">rchild</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">B</td>
-<td align="center">A</td>
-<td align="center">C</td>
-</tr>
-</tbody></table>
-<p>如果有需要 可以再增加一个指向其<strong>双亲</strong>的指针域</p>
-<h3 id="遍历二叉树"><a href="#遍历二叉树" class="headerlink" title="遍历二叉树"></a>遍历二叉树</h3><p>是指从根节点出发 按照某种 <strong>次序</strong> 依次 <strong>访问</strong> 二叉树中所有结点</p>
-<p>接下来介绍几种访问的次序</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center">A</th>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">B</td>
-<td align="center"></td>
-<td align="center">C</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">D</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">E</td>
-</tr>
-<tr>
-<td align="center">F</td>
-<td align="center"></td>
-<td align="center">G</td>
-<td align="center"></td>
-<td align="center">H</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p><strong>前序遍历</strong></p>
-<p>若二叉树为空 则空操作返回 否则先访问根结点 然后前序遍历左子树 再前序遍历右子树 </p>
-<p>得到 <strong>ABDFGCEH</strong></p>
-<p><strong>中序遍历</strong></p>
-<p>若二叉树为空 则空操作返回 否则<strong>从根结点开始</strong> 中序遍历根结点的左子树 然后访问根结点 最后中序遍历右子树 得到 <strong>FDGBACHE</strong></p>
-<p><strong>后序遍历</strong> </p>
-<p>若二叉树为空 则空操作返回 否则从根结点开始 后序遍历根结点的右子树 然后后序遍历根结点的左子树 最后访问根结点 得到 <strong>FGDBHECA</strong></p>
-<p><strong>层序遍历</strong></p>
-<p>若树为空 则空操作返回 否则从树的第一层开始 也就是根结点开始访问 从上而下 逐层遍历 </p>
-<p>在同一层中 按照从左到右的顺序对结点逐个访问 得到 <strong>ABCDEFGH</strong></p>
-<p><strong>通过不同的遍历提供了对结点依次处理的不同方式 可以在遍历过程中 对结点进行各种操作</strong></p>
-<h3 id="推导遍历的结果"><a href="#推导遍历的结果" class="headerlink" title="推导遍历的结果"></a>推导遍历的结果</h3><p>已知一颗二叉树的前序遍历序列为ABCDEF 中序遍历序列为CBAEDF 求后序遍历结果</p>
-<p>可以先确定A为根结点 然后通过中序遍历 知道了CB为左子树 EDF为右子树</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">A</th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">C、B</td>
-<td align="center"></td>
-<td align="center">E、D、F</td>
-</tr>
-</tbody></table>
-<p>接着由前序中的<strong>BC</strong> 先打印B后打印C 所以B是A结点的左孩子 中序遍历中是<strong>CB</strong> 所以确定C为左孩子</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center">A</th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center">B</td>
-<td align="center"></td>
-<td align="center">E、D、F</td>
-</tr>
-<tr>
-<td align="center">C</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>再看前序中为<strong>DEF</strong> 意味着D是A结点的右孩子 再来看中序中为<strong>EDF</strong> 则确定了 E为左孩子 F为右孩子</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th align="center">A</th>
-<th align="left"></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>B</td>
-<td align="center"></td>
-<td align="left">D</td>
-<td></td>
-</tr>
-<tr>
-<td>C</td>
-<td></td>
-<td align="center">E</td>
-<td align="left"></td>
-<td>F</td>
-</tr>
-</tbody></table>
-<p>复原二叉树后 再用后序遍历则 得到结果为 <strong>CBEFDA</strong></p>
-<p>同理 已知<strong>中序和后序</strong>也可以推导出 <strong>二叉树</strong>  </p>
-<p>但是 已知<strong>前序和后序</strong>是<strong>不能</strong>推导出二叉树的   所以中序遍历很关键 </p>
-<h3 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h3><p>在建立二叉树过程中 会产生很多空指针域 假如 n 个结点的二叉树 一共 2n 个指针域   n-1 条分支线数</p>
-<p>那么就存在 2n-(n-1)= <strong>n+1</strong> 个空指针域      我们可以在空指针域中存放某种遍历次序下的前驱和后继</p>
-<p>这种指向前驱和后继的<strong>指针</strong>称为 <strong>线索</strong>    加上线索的二叉链表 称为<strong>线索链表</strong> 相应的二叉树为<strong>线索二叉树</strong></p>
-<p>为了区分 child 是指向它的孩子 还是 指向前驱或后继  我们需要引入一个区分标志 标志域 <strong>ltag</strong> 和 <strong>rtag</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">lchild</th>
-<th align="center">ltag</th>
-<th align="center">data</th>
-<th align="center">rtag</th>
-<th align="center">rchild</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>当标志域为 <strong>0</strong> 时为指向该结点的孩子                  为 <strong>1</strong> 时为指向该结点的前驱或者后继</p>
-<p>p-&gt;ltag<strong>Link</strong>   含义就是 等于 0 为孩子          p-&gt;rtag<strong>Thread</strong>  就是 等于 1 为线索 </p>
-<p>如果所用的二叉树 需要<strong>经常遍历</strong>或<strong>查找结点</strong> 需要<strong>某种遍历序列</strong>中的<strong>前驱和后继</strong> 采用线索二叉树的存储结构就很好</p>
-<p>它充分利用了空指针域的空间 并且在创建时候的一次时间复杂度为<strong>O(n)</strong>的遍历 </p>
-<p>以后查前驱后继时间复杂度就为<strong>O(1)</strong></p>
-<h3 id="树、森林与二叉树的转换"><a href="#树、森林与二叉树的转换" class="headerlink" title="树、森林与二叉树的转换"></a>树、森林与二叉树的转换</h3><p><strong>树转换为二叉树</strong></p>
-<p>1) 加线    在所有兄弟之间加一条线</p>
-<p>2) 去线    对树中每个结点 只保留它与第一个<strong>孩子</strong>结点的连线 删除它与其他<strong>孩子</strong>之间的连线</p>
-<p>3) 层次调整   孩子放左侧 兄弟放右侧</p>
-<p><img src="/2019/09/21/树Tree/1.jpg" alt></p>
-<p><strong>森林转换为二叉树</strong></p>
-<p><img src="/2019/09/21/树Tree/2.jpg" alt></p>
-<p><strong>二叉树转换为树</strong></p>
-<p><img src="/2019/09/21/树Tree/3.jpg" alt></p>
-<p><strong>二叉树转换为森林</strong></p>
-<p>首先要先判断 这颗树能不能转换成一棵树还是森林 标准就是看二叉树的<strong>根结点</strong>是否有右孩子</p>
-<p>根结点有右孩子的话 就是森林 如果没有 则为一棵树</p>
-<p><img src="/2019/09/21/树Tree/4.jpg" alt></p>
-<h3 id="赫夫曼树-Huffman-及其应用"><a href="#赫夫曼树-Huffman-及其应用" class="headerlink" title="赫夫曼树(Huffman)及其应用"></a>赫夫曼树(Huffman)及其应用</h3><p>带<strong>权(Weight)</strong>路径长度WPL最小的二叉树 称作赫夫曼树</p>
-<p>先把有权值的叶子结点按照从小到大的顺序排成一个有序序列 例如 A5 E10 B15 D30 C40</p>
-<p>取头两个最小权值的结点 作为一个新结点 N<sub>1</sub>的两个子结点   两个中较小的为左孩子 大的为右孩子</p>
-<p>再将N<sub>1</sub>插入上述有序序列中  将A和E移除  得到有序序列为 N<sub>1</sub>15  B15  D30  C40</p>
-<p>如上循环 直到有序序列中 只剩一个为止      得到的树就是赫夫曼树 如下图</p>
-<p><img src="/2019/09/21/树Tree/5.jpg" alt></p>
-<p>二叉树的带权路径长度计算方法为:   WPL=40×1+30×2+15×3+10×4+5×4=205</p>
-<p><strong>赫夫曼编码</strong> </p>
-<p>一般需要编码的字符集为{d<sub>1</sub>,d<sub>2</sub>……,d<sub>n</sub>}  各个字符出现的次数或频率集合为{w<sub>1</sub>,w<sub>2</sub>,…..w<sub>n</sub>}</p>
-<p>d<sub>n</sub>作为叶子结点   w<sub>n</sub>为相对应叶子结点的权值   构造成一颗赫夫曼树  </p>
-<p>然后规定赫夫曼树的<strong>左分支代表0 右分支代表1</strong>  </p>
-<p>则从根结点开始所经过的路径分支组成的0和1的序列便为该结点对应字符的编码  这就是赫夫曼编码</p>
-<p>能够在知晓字符出现频率或次数情况下 相较于直接二进制编码的方法  <strong>节省存储或传输成本</strong></p>
-<p>且发送方和接收方必须要约定好<strong>同样的</strong>赫夫曼编码规则 才能利用赫夫曼树来进行<strong>解码</strong></p>
+<p><strong>C/C++ 编译流程</strong><br>源代码–<strong>预处理</strong>–&gt;代码展开–<strong>编译</strong>–&gt;汇编代码–<strong>汇编</strong>–&gt;机器指令–<strong>链接</strong>–&gt;可执行程序或库</p>
+<p><strong>-fPIC</strong><br>作用于编译阶段，告诉编译器产生与位置无关代码(Position-Independent Code)，<br>则产生的代码中，没有绝对地址，全部使用相对地址，代码可加载在任意位置，都可以正确的执行。</p>
+<p><strong>-l -L -I</strong> <strong>选项</strong><br>-l -L 链接库名 例如libabc.so  只用 -labc 就可以了<br>-I 链接头文件</p>
+<p><strong>-w -W选项</strong><br>-w的意思是关闭编译时的警告，也就是编译后不显示任何warning，<br>因为有时在编译之后编译器会显示一些例如数据转换之类的警告，这些警告是我们平时可以忽略的。<br>-W和 -Wall 编译后会显示所有警告</p>
+<p><strong>Linux下编译程序时，出现undefined reference to”pow”</strong><br>-lm是正解。<br>像 pow(2,3); 这种调用，gcc 在编译时就可以将其替换为对应的值（gcc 优化的一部分）<br>从而不需要链接 pow 所在的数学库 libm<br>而像 pow(a,2); 这种调用，一般无法做这种替换，因此需要链接 libm。 </p>
 
       
 
@@ -595,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">gcc</a>
         		</li>
       		
 		</ul>
@@ -614,18 +213,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/24/图Graph/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/10/15/Git、Gerrit、Repo管理流程/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          图Graph
+          Git、Gerrit、Repo管理流程
         
       </div>
     </a>
   
   
-    <a href="/2019/09/16/串string/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">串string</div>
+    <a href="/2020/10/15/C-基础（待补充）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++基础（待补充）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -652,7 +251,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#树-Tree"><span class="toc-number">1.</span> <span class="toc-text">树(Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#树的存储结构"><span class="toc-number">1.1.</span> <span class="toc-text">树的存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#双亲表示法"><span class="toc-number">1.1.1.</span> <span class="toc-text">双亲表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子表示法"><span class="toc-number">1.1.2.</span> <span class="toc-text">孩子表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#孩子兄弟表示法"><span class="toc-number">1.1.3.</span> <span class="toc-text">孩子兄弟表示法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树-Binary-Tree"><span class="toc-number">1.2.</span> <span class="toc-text">二叉树(Binary Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">1.2.1.</span> <span class="toc-text">特殊二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的性质"><span class="toc-number">1.2.2.</span> <span class="toc-text">二叉树的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的存储结构"><span class="toc-number">1.2.3.</span> <span class="toc-text">二叉树的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历二叉树"><span class="toc-number">1.2.4.</span> <span class="toc-text">遍历二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推导遍历的结果"><span class="toc-number">1.2.5.</span> <span class="toc-text">推导遍历的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线索二叉树"><span class="toc-number">1.2.6.</span> <span class="toc-text">线索二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树、森林与二叉树的转换"><span class="toc-number">1.2.7.</span> <span class="toc-text">树、森林与二叉树的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赫夫曼树-Huffman-及其应用"><span class="toc-number">1.2.8.</span> <span class="toc-text">赫夫曼树(Huffman)及其应用</span></a></li></ol></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
